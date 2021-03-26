@@ -94,8 +94,6 @@ function App() {
         setButtonY(randY);
     }
 
-    console.log("INDEX", textIndex)
-    console.log("LENGTH", PHRASES.length)
     return (
         <div className="App">
             <header className="App-header">
