@@ -29,6 +29,17 @@ const PHRASES = [
 ]
 
 
+let fxProps = {
+    count: 5,
+    interval: 200,
+    colors: ['#4e2a84', '#3cff00', '#fff400', "#f00"],
+    calc: (props: any, i: number) => ({
+        ...props,
+        x: (i + 1) * (window.innerWidth / 4) - (i + 1) * 100,
+        y: 300 + Math.random() * 100 - 50 + (i === 2 ? -80 : 0)
+    })
+}
+
 function App() {
     const [buttonX, setButtonX] = useState(0);
     const [buttonY, setButtonY] = useState(0);
@@ -45,7 +56,7 @@ function App() {
     useEffect(() => {
         const intervalId = setInterval(() =>
                 setTextIndex(index => index + 1),
-            3000 // every 3 seconds
+            1000 // every 3 seconds
         );
 
         setIntervalID(intervalId);
@@ -54,7 +65,7 @@ function App() {
     }, [])
 
     useEffect(() => {
-        if (textIndex % PHRASES.length === PHRASES.length - 1) {
+        if (isTextTransitionFinished()) {
             clearInterval(intervalID)
         }
     }, [textIndex])
@@ -63,17 +74,6 @@ function App() {
     //     // Playing song in the background on first render
     //     sound.play();
     // }, [])
-
-    let fxProps = {
-        count: 5,
-        interval: 200,
-        colors: ['#abd3dd', '#46197e', '#f0eabc', "#f00"],
-        calc: (props: any, i: number) => ({
-            ...props,
-            x: (i + 1) * (window.innerWidth / 4) - (i + 1) * 100,
-            y: 300 + Math.random() * 100 - 50 + (i === 2 ? -80 : 0)
-        })
-    }
 
 
     const onYesClick = (): void => {
@@ -94,6 +94,10 @@ function App() {
         setButtonY(randY);
     }
 
+    const isTextTransitionFinished = (): boolean => {
+        return textIndex % PHRASES.length === PHRASES.length - 1;
+    }
+
     return (
         <div className="App">
             <header className="App-header">
@@ -103,20 +107,20 @@ function App() {
 
             </header>
 
-            <div className={"button-wrapper"}>
+            <div>
+                {isTextTransitionFinished() ? <div className={"button-wrapper"}><AnswerButton text={"No"}
+                                                            color={ButtonColor.Red}
+                                                            x={buttonX}
+                                                            y={buttonY}
+                                                            onHover={onNoButtonHover}
+                                                            icon={<ClearIcon/>}/>
 
-                <AnswerButton text={"No"}
-                              color={ButtonColor.Red}
-                              x={buttonX}
-                              y={buttonY}
-                              onHover={onNoButtonHover}
-                              icon={<ClearIcon/>}/>
 
+                    <AnswerButton text={"Yes"}
+                                  color={ButtonColor.Green}
+                                  icon={<FavoriteIcon/>}
+                                  onClick={onYesClick}/></div>: <></>}
 
-                <AnswerButton text={"Yes"}
-                              color={ButtonColor.Green}
-                              icon={<FavoriteIcon/>}
-                              onClick={onYesClick}/>
                 {showFireWorks && <Fireworks {...fxProps} />}
             </div>
         </div>
