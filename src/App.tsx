@@ -7,6 +7,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import {Howl} from 'howler';
 // @ts-ignore
 import BackgroundSong from "./resources/audio/yesSong.mp3";
+import Fireworks from "fireworks/lib/react";
+
 
 const MARRY_YOU_URL = "https://www.youtube.com/watch?v=Zlv1rdcpS9M";
 
@@ -15,6 +17,7 @@ function App() {
     const [buttonX, setButtonX] = useState(0);
     const [buttonY, setButtonY] = useState(0);
     const [marryYouID, setMarryYouID] = useState<number>();
+    const [showFireWorks, setShowFireWorks] = useState(false);
 
     const sound = new Howl({
         src: [BackgroundSong]
@@ -25,6 +28,17 @@ function App() {
     //     sound.play();
     // }, [])
 
+    let fxProps = {
+        count: 5,
+        interval: 200,
+        colors: ['#abd3dd', '#46197e', '#f0eabc', "#f00"],
+        calc: (props: any, i: number) => ({
+            ...props,
+            x: (i + 1) * (window.innerWidth / 4) - (i + 1) * 100,
+            y: 300 + Math.random() * 100 - 50 + (i === 2 ? -80 : 0)
+        })
+    }
+
 
     const onYesClick = (): void => {
         if (marryYouID) {
@@ -33,8 +47,8 @@ function App() {
         } else {
             const songID = sound.play();
             setMarryYouID(songID);
+            setShowFireWorks(true);
         }
-
     }
 
     const onNoButtonHover = (event: MouseEvent) => {
@@ -64,6 +78,7 @@ function App() {
                               color={ButtonColor.Green}
                               icon={<FavoriteIcon/>}
                               onClick={onYesClick}/>
+                {showFireWorks && <Fireworks {...fxProps} />}
             </div>
         </div>
     );
