@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {AnswerButton, ButtonColor} from "./components/button/answer-button";
 import ClearIcon from '@material-ui/icons/Clear';
@@ -8,9 +8,25 @@ import {Howl} from 'howler';
 // @ts-ignore
 import BackgroundSong from "./resources/audio/yesSong.mp3";
 import Fireworks from "fireworks/lib/react";
+import TextTransition, {presets} from "react-text-transition";
 
 
 const MARRY_YOU_URL = "https://www.youtube.com/watch?v=Zlv1rdcpS9M";
+
+const PHRASES = [
+    "This is it",
+    "After Almost 8 years...",
+    "After traveling to a lot of places together...",
+    "After eating so much good food...",
+    "After gaining a ton of experirences together... ",
+    "After adopting Pixel...",
+    "The time has finally come",
+    "Sharon",
+    "Shay Shay",
+    "Vanilla bonbon",
+    "ChooChi",
+    "Will you marry me?",
+]
 
 
 function App() {
@@ -18,10 +34,30 @@ function App() {
     const [buttonY, setButtonY] = useState(0);
     const [marryYouID, setMarryYouID] = useState<number>();
     const [showFireWorks, setShowFireWorks] = useState(false);
+    const [textIndex, setTextIndex] = useState(0);
+    const [intervalID, setIntervalID] = useState<any>();
+
 
     const sound = new Howl({
         src: [BackgroundSong]
     });
+
+    useEffect(() => {
+        const intervalId = setInterval(() =>
+                setTextIndex(index => index + 1),
+            3000 // every 3 seconds
+        );
+
+        setIntervalID(intervalId);
+
+        return () => clearTimeout(intervalId)
+    }, [])
+
+    useEffect(() => {
+        if (textIndex % PHRASES.length === PHRASES.length - 1) {
+            clearInterval(intervalID)
+        }
+    }, [textIndex])
 
     // useEffect(() => {
     //     // Playing song in the background on first render
@@ -58,10 +94,15 @@ function App() {
         setButtonY(randY);
     }
 
+    console.log("INDEX", textIndex)
+    console.log("LENGTH", PHRASES.length)
     return (
         <div className="App">
             <header className="App-header">
-                This is a Cool Project!
+                <TextTransition text={PHRASES[textIndex % PHRASES.length]}
+                                springConfig={presets.wobbly}/>
+
+
             </header>
 
             <div className={"button-wrapper"}>
