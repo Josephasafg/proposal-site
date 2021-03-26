@@ -9,12 +9,13 @@ import {Howl} from 'howler';
 import BackgroundSong from "./resources/audio/yesSong.mp3";
 import Fireworks from "fireworks/lib/react";
 import TextTransition, {presets} from "react-text-transition";
+import Emoji from './components/emoji';
 
 
 const MARRY_YOU_URL = "https://www.youtube.com/watch?v=Zlv1rdcpS9M";
 
 const PHRASES = [
-    "This is it",
+    "This is it ",
     "After Almost 8 years...",
     "After traveling to a lot of places together...",
     "After eating so much good food...",
@@ -27,6 +28,36 @@ const PHRASES = [
     "ChooChi",
     "Will you marry me?",
 ]
+
+const HEBREW_PHRASES = [
+    "זהו זה",
+    "אחרי כמעט 8 שנים... 😮",
+    "אחרי 2 דירות...🏠",
+    "אחרי 3 תארים...🎓",
+    'אחרי המון טיולים בארץ ובחו"ל...🗺',
+    "אחרי טיולים בארהב בלי אחד והשניה...",
+    "אחרי המון הופעות שהיינו יחד...🎸🎺",
+    "אחרי שפיקסל התווספה אלינו...🐶",
+    "אחרי אינספור מסעדות ואוכל טעים שאכלנו...🍱🍰",
+    "אחרי כל השרתונים בעולם שביקרנו בהם...🏨",
+    "אחרי מלא שבתות של רוגע וכיף בבית....🌅",
+    "אחרי אין ספור סדרות...📺",
+    "אחרי שני ילדים שעבדו בארומה יחד...☕",
+    "ושעוד נזכה לאין ספור אחרי",
+    "אז, אחרי, אחרי ואחרי, נו תגיע כבר לנקודה!!!⛏",
+    "אז הנה, אנחנו כמעט שם...",
+    "הנקודה שלי...",
+    "הנקודה שלנו...",
+    "הנקודה שאולי הרבה מהחברים שלנו כבר עברו",
+    "ועכשיו הגיע תורנו... אני מקווה 😊",
+    "שרוני שלי❤",
+    "שיי שיי",
+    "יפה שלי",
+    "ונילה בון בון",
+    "צ'וצ'י שלי",
+    "התינשאי לי?💍",
+]
+const TEXT_INTERVAL = 500;
 
 
 let fxProps = {
@@ -56,7 +87,7 @@ function App() {
     useEffect(() => {
         const intervalId = setInterval(() =>
                 setTextIndex(index => index + 1),
-            1000 // every 3 seconds
+            TEXT_INTERVAL // every 3 seconds
         );
 
         setIntervalID(intervalId);
@@ -95,13 +126,13 @@ function App() {
     }
 
     const isTextTransitionFinished = (): boolean => {
-        return textIndex % PHRASES.length === PHRASES.length - 1;
+        return textIndex % HEBREW_PHRASES.length === HEBREW_PHRASES.length - 1;
     }
 
     return (
         <div className="App">
             <header className="App-header">
-                <TextTransition text={PHRASES[textIndex % PHRASES.length]}
+                <TextTransition text={HEBREW_PHRASES[textIndex % HEBREW_PHRASES.length]}
                                 springConfig={presets.wobbly}/>
 
 

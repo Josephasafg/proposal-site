@@ -11,6 +11,7 @@
 }
 
 .App-header {
+  direction: rtl;
   min-height: 30vh;
   display: flex;
   flex-direction: column;
