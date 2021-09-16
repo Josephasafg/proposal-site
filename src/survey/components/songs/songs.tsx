@@ -3,7 +3,6 @@ import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import {Song} from "../../models/song";
 import {SongComponent} from "./song/song-component";
@@ -12,8 +11,6 @@ import "./songs.css";
 import {Divider} from "@material-ui/core";
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
-import clsx from 'clsx';
-
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -41,14 +38,11 @@ const useItemStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             backgroundColor: "rgb(144, 236, 255)",
-            borderRadius: "25px",
-            padding: "10px"
+            borderRadius: "15px",
         }
 
     }),
 );
-
-
 
 
 const useDividerStyles = makeStyles((theme: Theme) =>
@@ -60,8 +54,6 @@ const useDividerStyles = makeStyles((theme: Theme) =>
 
     }),
 );
-
-
 
 
 interface SongsProps {
