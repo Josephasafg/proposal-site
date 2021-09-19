@@ -6,9 +6,11 @@ import {Song} from "../../models/song";
 import {SongsAPI} from "../../API/api";
 import {VoteCountdown} from "../countdown-clock/countdown-clock";
 import {SongSubmissionContext} from "../../../pages/survey/survey-page";
+import "./main-page.css";
 
-
-const HELP_US_TEXT = "בבקשה תעזרו לנו לבחור שיר לשבירת הכוס!";
+const HELP_US_TEXT = "עוזרים לאסף ושרון לבחור שיר לשבירת הכוס!";
+const HELP_US_DESCRITPION = 'בחרו שיר אחד מתוך הרשימה';
+const HELP_US_DESCRITPION2 = "ולחצו לשלוח לדיג'יי";
 
 interface MainPageProps {
     onSubmit: () => void
@@ -42,10 +44,11 @@ export const MainPage: React.FC<MainPageProps> = (
     return (
         <div>
             <div className="help-us-header">
-                <header>{HELP_US_TEXT}</header>
+                <div className={"help-us-text"}>{HELP_US_TEXT}</div>
+                <div className={"help-us-description"}>{HELP_US_DESCRITPION}</div>
+                <div className={"help-us-description"}>{HELP_US_DESCRITPION2}</div>
             </div>
             <VoteCountdown/>
-
 
             <SongList songs={songs}/>
             {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedSongId={id}/>}

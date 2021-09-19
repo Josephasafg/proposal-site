@@ -2,50 +2,62 @@ import React, {useContext} from 'react';
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import Checkbox from '@material-ui/core/Checkbox';
+// import Checkbox from '@material-ui/core/Checkbox';
 import {Song} from "../../models/song";
 import {SongComponent} from "./song/song-component";
 import {SongSubmissionContext} from "../../../pages/survey/survey-page";
 import "./songs.css";
-import {Divider} from "@material-ui/core";
+import {Divider, ListItemText} from "@material-ui/core";
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+import Checkbox from '@mui/material/Checkbox';
 
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
-            // width: '100%',
             maxWidth: 550,
-            // left: "35%",
         },
 
-        itemText: {
-            margin: 20
-        },
+    }),
+);
 
-        container: {
-            backgroundColor: "rgb(144, 236, 255)",
-            borderRadius: "25px",
+const useTextStyles = makeStyles((_: Theme) =>
+    createStyles({
+
+        primary: {
+            fontSize: "0.720rem",
+            fontWeight: "bold",
+            position: "relative",
+            paddingRight: 50,
+            color: "white",
+            left: 80,
         }
 
     }),
 );
 
 
-const useItemStyles = makeStyles((theme: Theme) =>
+const useItemStyles = makeStyles((_: Theme) =>
     createStyles({
         container: {
-            backgroundColor: "rgb(144, 236, 255)",
+            backgroundColor: "rgb(60, 45, 66)",
             borderRadius: "15px",
+            display: "flex",
+            justifyContent: "space-between",
+
+            "&:hover": {
+                //you want this to be the same as the backgroundColor above
+                backgroundColor: "rgb(60, 45, 66)",
+
+            }
         }
 
     }),
 );
 
 
-const useDividerStyles = makeStyles((theme: Theme) =>
+const useDividerStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
             height: '13px',
@@ -60,6 +72,8 @@ interface SongsProps {
     songs: Song[]
 }
 
+const label = {inputProps: {'aria-label': 'Checkbox demo'}};
+
 export const SongList: React.FC<SongsProps> = (
     {
         songs
@@ -69,6 +83,7 @@ export const SongList: React.FC<SongsProps> = (
     const itemStyle = useItemStyles();
     const [checked, setChecked] = React.useState(1);
     const songContext = useContext(SongSubmissionContext);
+    const textStyle = useTextStyles();
 
     const onSongChange = (song: Song): void => {
         songContext.updateSong(song.id);
@@ -84,28 +99,40 @@ export const SongList: React.FC<SongsProps> = (
 
                     const isChecked = checked === song.id;
 
-                    const backgroundColor = isChecked ? "rgba(0, 0, 0, 0.04)" : "";
+                    const backgroundColor = isChecked ? "rgb(21, 14, 22)" : "";
 
                     return (
                         <div key={`${index}-dev`} className={"song-item"}>
                             <ListItem className={itemStyle.container} key={labelId} button
+                                      selected={false}
                                       style={{backgroundColor: backgroundColor, padding: "10px"}}>
+
+                                <Checkbox
+                                    icon={<RadioButtonUncheckedIcon/>}
+                                    edge="end"
+                                    onChange={() => onSongChange(song)}
+                                    checked={isChecked}
+                                    checkedIcon={<RadioButtonCheckedIcon/>}
+                                    {...label}
+                                    sx={{
+                                        color: "white",
+                                        '&.Mui-checked': {
+                                            color: "white",
+                                        },
+                                    }}
+                                />
+
+                                <ListItemText id={labelId}
+                                              primary={song.name}
+                                              disableTypography
+                                              className={textStyle.primary}/>
+
                                 <SongComponent
                                     key={labelId}
                                     song={song}
                                     isChecked={song.id.toString() === songContext.id.toString()}
                                     onChange={onSongChange}/>
-                                {/*<ListItemText id={labelId} primary={song.name} className={classes.itemText}/>*/}
-                                <ListItemSecondaryAction>
-                                    <Checkbox
-                                        icon={<RadioButtonUncheckedIcon/>}
-                                        edge="end"
-                                        onChange={() => onSongChange(song)}
-                                        checked={isChecked}
-                                        checkedIcon={<RadioButtonCheckedIcon/>}
-                                        inputProps={{'aria-labelledby': labelId}}
-                                    />
-                                </ListItemSecondaryAction>
+
                             </ListItem>
                             <Divider key={index} className={dividerStyle.root}/>
                         </div>
