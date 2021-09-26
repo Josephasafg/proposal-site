@@ -17,6 +17,9 @@ const useStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
             maxWidth: 550,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
         },
 
     }),
@@ -29,9 +32,9 @@ const useTextStyles = makeStyles((_: Theme) =>
             fontSize: "0.720rem",
             fontWeight: "bold",
             position: "relative",
-            paddingRight: 50,
+            maxWidth: 150,
             color: "white",
-            left: 80,
+            left: 40,
         }
 
     }),
@@ -105,7 +108,7 @@ export const SongList: React.FC<SongsProps> = (
                         <div key={`${index}-dev`} className={"song-item"}>
                             <ListItem className={itemStyle.container} key={labelId} button
                                       selected={false}
-                                      style={{backgroundColor: backgroundColor, padding: "10px"}}>
+                                      style={{backgroundColor: backgroundColor, padding: "10px", width: 350, height: 80}}>
 
                                 <Checkbox
                                     icon={<RadioButtonUncheckedIcon/>}

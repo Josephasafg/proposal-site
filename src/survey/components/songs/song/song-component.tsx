@@ -20,8 +20,8 @@ export const SongComponent: React.FC<SongProps> = (
             <Iframe
                 className={"song-frame"}
                 url={song.embeddedURL}
-                width="80"
-                height="70"
+                width="60"
+                height="50"
                 frameBorder={0}
                 allow="encrypted-media"/>
         </div>
