@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import SongList from "../songs/songs";
-import {CircularSpinner} from "../spinner/spinner";
+import {CircularSpinner, HashLoader} from "../spinner/spinner";
 import {SubmitButton} from "../submit-button/submit-button";
 import {Song} from "../../models/song";
 import {SongsAPI} from "../../API/api";
@@ -14,32 +14,23 @@ const HELP_US_DESCRITPION2 = "ולחצו לשלוח לדיג'יי";
 
 interface MainPageProps {
     onSubmit: () => void
+    songs: Song[]
 }
 
 export const MainPage: React.FC<MainPageProps> = (
     {
-        onSubmit
+        onSubmit,
+        songs
     }) => {
 
     const {id} = useContext(SongSubmissionContext);
     const [isLoad, setIsLoad] = useState(false);
-    const [songs, setSongs] = useState<Song[]>([]);
 
     const handleOnSubmit = () => {
         setIsLoad(true);
         onSubmit();
         setIsLoad(true);
     }
-
-    async function fetchSongs() {
-        const songs = await SongsAPI.getSongs();
-        setSongs(songs);
-    }
-
-    useEffect(() => {
-        fetchSongs();
-    }, [])
-
 
     return (
         <div>
@@ -52,6 +43,7 @@ export const MainPage: React.FC<MainPageProps> = (
 
             <SongList songs={songs}/>
             {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedSongId={id}/>}
+
         </div>
     )
 }
