@@ -26,10 +26,10 @@ export const MainPage: React.FC<MainPageProps> = (
     const {id} = useContext(SongSubmissionContext);
     const [isLoad, setIsLoad] = useState(false);
 
-    const handleOnSubmit = () => {
+    const handleOnSubmit = async () => {
         setIsLoad(true);
-        onSubmit();
-        setIsLoad(true);
+        await onSubmit();
+        setIsLoad(false);
     }
 
     return (
