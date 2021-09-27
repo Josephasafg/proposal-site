@@ -48,6 +48,7 @@ const useItemStyles = makeStyles((_: Theme) =>
             borderRadius: "15px",
             display: "flex",
             justifyContent: "space-between",
+            textAlign: "center",
 
             "&:hover": {
                 //you want this to be the same as the backgroundColor above
