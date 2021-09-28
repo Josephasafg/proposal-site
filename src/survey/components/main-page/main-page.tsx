@@ -1,9 +1,8 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useState} from "react";
 import SongList from "../songs/songs";
-import {CircularSpinner, HashLoader} from "../spinner/spinner";
+import {CircularSpinner} from "../spinner/spinner";
 import {SubmitButton} from "../submit-button/submit-button";
 import {Song} from "../../models/song";
-import {SongsAPI} from "../../API/api";
 import {VoteCountdown} from "../countdown-clock/countdown-clock";
 import {SongSubmissionContext} from "../../../pages/survey/survey-page";
 import "./main-page.css";
