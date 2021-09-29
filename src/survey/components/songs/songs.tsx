@@ -109,6 +109,7 @@ export const SongList: React.FC<SongsProps> = (
                         <div key={`${index}-dev`} className={"song-item"}>
                             <ListItem className={itemStyle.container} key={labelId} button
                                       selected={false}
+                                      onClick={() => onSongChange(song)}
                                       style={{backgroundColor: backgroundColor, padding: "10px", width: 350, height: 80}}>
 
                                 <Checkbox
