@@ -18,6 +18,7 @@ function SurveyPage() {
     const [hasSubmitted, setHasSubmitted] = useState(false);
     const [isPageLoading, setIsPageLoading] = useState(false);
     const [songs, setSongs] = useState<Song[]>([]);
+
     let history = useHistory();
 
     const onSubmit = async () => {
@@ -51,7 +52,8 @@ function SurveyPage() {
     return (
         <SongSubmissionContext.Provider value={{updateSong: setPickedSong, id: pickedSong}}>
             <div className="App">
-                {hasSubmitted ? redirectToPage("/thank-you", <ThankYouPage/>) :renderSurvey()}
+
+                {hasSubmitted ? redirectToPage("/thank-you", <ThankYouPage/>) : renderSurvey()}
                 <HashLoader isLoading={isPageLoading}/>
             </div>
         </SongSubmissionContext.Provider>

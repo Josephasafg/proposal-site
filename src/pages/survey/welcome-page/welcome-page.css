@@ -1,0 +1,22 @@
+.page-wrapper {
+    color: white;
+    direction: rtl;
+}
+
+.first-header {
+    font-size: 14px;
+    padding: 12px;
+}
+
+.second-header {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.glass-breaking-text {
+    font-weight: bold;
+}
+
+.paragraph {
+    font-size: 14px;
+}
