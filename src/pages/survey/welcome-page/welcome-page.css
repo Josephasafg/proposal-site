@@ -2,11 +2,10 @@
     padding: 40px;
     color: white;
     direction: rtl;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 .first-header {
-    /*font-size: 14px;*/
     padding: 12px;
 }
 
@@ -20,5 +19,5 @@
 }
 
 .paragraph {
-    font-size: 20px;
+    font-size: 16px;
 }
