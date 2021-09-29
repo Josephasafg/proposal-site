@@ -86,7 +86,6 @@ export const WelcomePage: React.FC = () => {
 
                 <br/>
                 <br/>
-                <br/>
                 <Button className={buttonStyle.root} onClick={handleOnClick}>
                     להצבעה
                 </Button>

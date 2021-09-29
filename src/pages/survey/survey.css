@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=M+PLUS+1p:wght@300&display=swap');
 /* Portrait and Landscape */
 @media only screen
 and (min-device-width: 414px)
@@ -56,6 +57,8 @@ and (orientation: landscape) {
 
 .App {
     text-align: center;
+    font-family: 'Amatic SC', cursive;
+    /*font-size: 22px;*/
 }
 
 .help-us-header {

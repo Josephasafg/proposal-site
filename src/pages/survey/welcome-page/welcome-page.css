@@ -1,16 +1,18 @@
 .page-wrapper {
+    padding: 40px;
     color: white;
     direction: rtl;
+    font-size: 22px;
 }
 
 .first-header {
-    font-size: 14px;
+    /*font-size: 14px;*/
     padding: 12px;
 }
 
 .second-header {
     font-weight: bold;
-    font-size: 16px;
+    /*font-size: 16px;*/
 }
 
 .glass-breaking-text {
@@ -18,5 +20,5 @@
 }
 
 .paragraph {
-    font-size: 14px;
+    font-size: 20px;
 }
