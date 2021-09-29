@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 .help-us-text {
     color: white;
     font-weight: bold;
+    /*font-family: 'Amatic SC', cursive;*/
+    /*font-family: 'Varela Round', sans-serif;*/
 }
 
 .help-us-description {
+    /*font-family: Amatic;*/
     color: white;
+}
+
+.vote-countdown-wrapper {
+    margin-bottom: 25px;
 }
