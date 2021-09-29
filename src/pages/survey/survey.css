@@ -59,6 +59,7 @@ and (orientation: landscape) {
 }
 
 .help-us-header {
+    padding: 20px;
     direction: rtl;
 }
 
