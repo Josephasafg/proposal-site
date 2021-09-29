@@ -7,7 +7,7 @@ import {VoteCountdown} from "../countdown-clock/countdown-clock";
 import {SongSubmissionContext} from "../../../pages/survey/survey-page";
 import "./main-page.css";
 
-const HELP_US_TEXT = "עוזרים לאסף ושרון לבחור שיר לשבירת הכוס!";
+const HELP_US_TEXT = "שוברים את הכוס עם אסף ושרון!";
 const HELP_US_DESCRITPION = 'בחרו שיר אחד מתוך הרשימה';
 const HELP_US_DESCRITPION2 = "ולחצו לשלוח לדיג'יי";
 
