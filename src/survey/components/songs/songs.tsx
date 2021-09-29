@@ -34,7 +34,6 @@ const useTextStyles = makeStyles((_: Theme) =>
             position: "relative",
             maxWidth: 150,
             color: "white",
-            left: 40,
         }
 
     }),
@@ -110,7 +109,12 @@ export const SongList: React.FC<SongsProps> = (
                             <ListItem className={itemStyle.container} key={labelId} button
                                       selected={false}
                                       onClick={() => onSongChange(song)}
-                                      style={{backgroundColor: backgroundColor, padding: "10px", width: 350, height: 80}}>
+                                      style={{
+                                          backgroundColor: backgroundColor,
+                                          padding: "10px",
+                                          width: 350,
+                                          height: 80
+                                      }}>
 
                                 <Checkbox
                                     icon={<RadioButtonUncheckedIcon/>}
