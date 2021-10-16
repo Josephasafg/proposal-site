@@ -3,7 +3,8 @@ import {Redirect, Route, Switch} from "react-router-dom";
 import {ProposalPage} from "./pages/proposal/propsal-page";
 import SurveyPage from "./pages/survey/survey-page";
 import {WelcomePage} from "./pages/survey/welcome-page/welcome-page";
-
+import {WinningSong} from './survey/components/winning-song/winning-song';
+import {SurveyLayout} from "./survey/survey-layout";
 
 function App() {
     return (
@@ -13,11 +14,21 @@ function App() {
             </Route>
 
             <Route exact path="/survey/vote">
-                <SurveyPage/>
+                <SurveyLayout>
+                    <SurveyPage/>
+                </SurveyLayout>
             </Route>
 
             <Route exact path={"/survey/welcome-page"}>
-                <WelcomePage/>
+                <SurveyLayout>
+                    <WelcomePage/>
+                </SurveyLayout>
+            </Route>
+
+            <Route exact path={"/survey/winning-song"}>
+                <SurveyLayout>
+                    <WinningSong/>
+                </SurveyLayout>
             </Route>
 
             <Redirect from="/" to={"/survey/welcome-page"} exact={true}/>

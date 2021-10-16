@@ -1,0 +1,13 @@
+
+.winning-song-page-wrapper {
+    position: absolute;
+    top: 35%;
+}
+
+.winning-song-wrapper {
+    font-size: 36px;
+}
+
+.winning-song-description {
+    direction: rtl;
+}
