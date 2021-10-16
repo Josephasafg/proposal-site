@@ -1,0 +1,6 @@
+.text-wrapper {
+    direction: rtl;
+    position: absolute;
+    top: 35%;
+    font-size: 36px;
+}

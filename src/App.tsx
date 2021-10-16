@@ -5,6 +5,7 @@ import SurveyPage from "./pages/survey/survey-page";
 import {WelcomePage} from "./pages/survey/welcome-page/welcome-page";
 import {WinningSong} from './survey/components/winning-song/winning-song';
 import {SurveyLayout} from "./survey/survey-layout";
+import {ThankYouPage} from "./survey/components/thank-you-page/thank-you-page";
 
 function App() {
     return (
@@ -28,6 +29,12 @@ function App() {
             <Route exact path={"/survey/winning-song"}>
                 <SurveyLayout>
                     <WinningSong/>
+                </SurveyLayout>
+            </Route>
+
+            <Route exact path={"/survey/thank-you"}>
+                <SurveyLayout>
+                    <ThankYouPage/>
                 </SurveyLayout>
             </Route>
 

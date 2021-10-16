@@ -53,7 +53,7 @@ function SurveyPage() {
         <SongSubmissionContext.Provider value={{updateSong: setPickedSong, id: pickedSong}}>
             <div>
 
-                {hasSubmitted ? redirectToPage("/thank-you", <ThankYouPage/>) : renderSurvey()}
+                {hasSubmitted ? redirectToPage("/survey/thank-you", <ThankYouPage/>) : renderSurvey()}
                 <HashLoader isLoading={isPageLoading}/>
             </div>
         </SongSubmissionContext.Provider>
