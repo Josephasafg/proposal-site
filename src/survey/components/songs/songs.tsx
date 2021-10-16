@@ -47,6 +47,11 @@ const useItemStyles = makeStyles((_: Theme) =>
             display: "flex",
             justifyContent: "space-between",
             textAlign: "center",
+
+            "&:hover": {
+                backgroundColor: "rgb(159, 167, 128)",
+
+            }
         }
 
     }),
