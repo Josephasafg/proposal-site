@@ -30,10 +30,9 @@ const useTextStyles = makeStyles((_: Theme) =>
 
         primary: {
             fontSize: "0.720rem",
-            fontWeight: "bold",
             position: "relative",
             maxWidth: 150,
-            color: "white",
+            color: "#f7f4f1"
         }
 
     }),
@@ -43,17 +42,11 @@ const useTextStyles = makeStyles((_: Theme) =>
 const useItemStyles = makeStyles((_: Theme) =>
     createStyles({
         container: {
-            backgroundColor: "rgb(60, 45, 66)",
+            backgroundColor: "rgb(159, 167, 128)",
             borderRadius: "15px",
             display: "flex",
             justifyContent: "space-between",
             textAlign: "center",
-
-            "&:hover": {
-                //you want this to be the same as the backgroundColor above
-                backgroundColor: "rgb(60, 45, 66)",
-
-            }
         }
 
     }),
@@ -102,7 +95,7 @@ export const SongList: React.FC<SongsProps> = (
 
                     const isChecked = checked === song.id;
 
-                    const backgroundColor = isChecked ? "rgb(21, 14, 22)" : "";
+                    const backgroundColor = isChecked ? "rgb(123, 132, 91)" : "";
 
                     return (
                         <div key={`${index}-dev`} className={"song-item"}>
@@ -112,6 +105,7 @@ export const SongList: React.FC<SongsProps> = (
                                       style={{
                                           backgroundColor: backgroundColor,
                                           padding: "10px",
+                                          color: "#f7f4f1",
                                           width: 350,
                                           height: 80
                                       }}>
@@ -124,9 +118,9 @@ export const SongList: React.FC<SongsProps> = (
                                     checkedIcon={<RadioButtonCheckedIcon/>}
                                     {...label}
                                     sx={{
-                                        color: "white",
+                                        color: "#f7f4f1",
                                         '&.Mui-checked': {
-                                            color: "white",
+                                            color: "#f7f4f1",
                                         },
                                     }}
                                 />

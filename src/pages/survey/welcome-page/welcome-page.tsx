@@ -20,6 +20,7 @@ const useButtonStyles = makeStyles((_: Theme) =>
         root: {
             // margin: 50,
             backgroundColor: "rgb(232, 231, 211)",
+            color: "#97845d",
             width: 120,
             fontSize: 18,
             fontWeight: "bold"

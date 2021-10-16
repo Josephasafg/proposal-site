@@ -58,7 +58,6 @@ and (orientation: landscape) {
 
 .App {
     text-align: center;
-    /*color: rgb(159, 167, 128);*/
     color: #97845d;
     font-family: 'Secular One', sans-serif;    /*font-size: 22px;*/
     background-image: url("bg_site.svg");
