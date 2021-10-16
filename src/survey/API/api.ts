@@ -36,4 +36,14 @@ export class SongsAPI {
 
         return false;
     }
+
+    public static async getWinningSong(): Promise<Song | null> {
+        const response = await SONGS_API.get("/song/winning-song")
+
+        if (response && response.data) {
+            return response.data as Song
+        }
+
+        return null
+    }
 }
