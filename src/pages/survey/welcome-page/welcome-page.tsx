@@ -7,9 +7,9 @@ import {useHistory} from "react-router-dom";
 const useDividerStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
-            // height: '13px',
             margin: 25,
-            backgroundColor: "white",
+            color: "#97845d",
+            backgroundColor: "rgb(159, 167, 128)",
         },
 
     }),

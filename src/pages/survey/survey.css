@@ -58,7 +58,10 @@ and (orientation: landscape) {
 
 .App {
     text-align: center;
+    /*color: rgb(159, 167, 128);*/
+    color: #97845d;
     font-family: 'Secular One', sans-serif;    /*font-size: 22px;*/
+    background-image: url("bg_site.svg");
 }
 
 .help-us-header {
@@ -75,5 +78,5 @@ and (orientation: landscape) {
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: #c3a46c;
 }

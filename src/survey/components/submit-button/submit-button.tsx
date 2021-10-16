@@ -15,6 +15,7 @@ const useStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
             backgroundColor: "rgb(232, 231, 211)",
+            color: "#97845d",
             width: 150,
             fontSize: 18,
             fontWeight: "bold"

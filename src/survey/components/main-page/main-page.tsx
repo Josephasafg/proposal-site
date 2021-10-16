@@ -6,9 +6,8 @@ import {Song} from "../../models/song";
 import {VoteCountdown} from "../countdown-clock/countdown-clock";
 import {SongSubmissionContext} from "../../../pages/survey/survey-page";
 import "./main-page.css";
-
-const HELP_US_TEXT = "שוברים את הכוס עם אסף ושרון!";
-const HELP_US_DESCRITPION = 'בחרו שיר אחד מתוך הרשימה';
+const HELP_US_TEXT = "שוברים את הכוס!";
+const HELP_US_DESCRITPION = 'בחרו שיר מתוך הרשימה';
 const HELP_US_DESCRITPION2 = "ולחצו לשלוח לדיג'יי";
 
 interface MainPageProps {
@@ -32,7 +31,7 @@ export const MainPage: React.FC<MainPageProps> = (
     }
 
     return (
-        <div>
+        <div className={"site-background"}>
             <div className="help-us-header">
                 <div className={"help-us-text"}>{HELP_US_TEXT}</div>
                 <div className={"help-us-description"}>{HELP_US_DESCRITPION}</div>
@@ -44,7 +43,6 @@ export const MainPage: React.FC<MainPageProps> = (
                 <VoteCountdown/>
             </div>
             {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedSongId={id}/>}
-
         </div>
     )
 }
