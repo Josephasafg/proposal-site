@@ -5,6 +5,7 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {useHistory} from "react-router-dom";
 import {SongsAPI} from "../../../survey/API/api";
 import {FetchedSongs} from "../../../survey/survey-layout";
+import {LOCAL_STORAGE_SONGS_KEY} from "../../../survey/components/songs/consts";
 
 const useDividerStyles = makeStyles((_: Theme) =>
     createStyles({
@@ -20,7 +21,6 @@ const useDividerStyles = makeStyles((_: Theme) =>
 const useButtonStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
-            // margin: 50,
             backgroundColor: "rgb(232, 231, 211)",
             color: "#97845d",
             width: 120,
@@ -47,6 +47,7 @@ export const WelcomePage: React.FC = () => {
         setIsFetchingSongs(true);
         const songs = await SongsAPI.getSongs();
         setIsFetchingSongs(false);
+        localStorage.setItem(LOCAL_STORAGE_SONGS_KEY, JSON.stringify(songs))
         setSongs(songs);
     }
 
