@@ -6,7 +6,7 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 const useSpinnerStyles = makeStyles((_: Theme) =>
     createStyles({
-        colorPrimary: {
+        primaryColor: {
             color: "#c3a46c",
         },
 
@@ -16,10 +16,10 @@ const useSpinnerStyles = makeStyles((_: Theme) =>
 
 
 export const CircularSpinner = () => {
-    const style = useSpinnerStyles()
+    const style = useSpinnerStyles();
     return (
-        <div className={style.colorPrimary}>
-            <CircularProgress/>
+        <div className={style.primaryColor}>
+            <CircularProgress color={"inherit"}/>
         </div>
     )
 }
