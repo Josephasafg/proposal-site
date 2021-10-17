@@ -52,7 +52,7 @@ export const WelcomePage: React.FC = () => {
 
     useEffect(() => {
         fetchSongs();
-    }, [fetchSongs])
+    }, [])
 
     return (
         <div className="App">
