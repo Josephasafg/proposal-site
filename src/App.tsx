@@ -7,7 +7,9 @@ import {WinningSong} from './survey/components/winning-song/winning-song';
 import {SurveyLayout} from "./survey/survey-layout";
 import {ThankYouPage} from "./survey/components/thank-you-page/thank-you-page";
 
+
 function App() {
+
     return (
         <Switch>
             <Route exact path="/proposal">
@@ -25,6 +27,7 @@ function App() {
                     <WelcomePage/>
                 </SurveyLayout>
             </Route>
+
 
             <Route exact path={"/survey/winning-song"}>
                 <SurveyLayout>

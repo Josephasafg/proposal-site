@@ -1,11 +1,11 @@
-import React, {createContext, useEffect, useState} from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import './survey.css';
 import {useHistory} from "react-router-dom";
 import {SongsAPI} from "../../survey/API/api";
 import {ThankYouPage} from "../../survey/components/thank-you-page/thank-you-page";
 import {MainPage} from "../../survey/components/main-page/main-page";
 import {HashLoader} from "../../survey/components/spinner/spinner";
-import {Song} from "../../survey/models/song";
+import {FetchedSongs} from "../../survey/survey-layout";
 
 
 export const SongSubmissionContext = createContext({
@@ -16,8 +16,7 @@ export const SongSubmissionContext = createContext({
 function SurveyPage() {
     const [pickedSong, setPickedSong] = useState(-1);
     const [hasSubmitted, setHasSubmitted] = useState(false);
-    const [isPageLoading, setIsPageLoading] = useState(false);
-    const [songs, setSongs] = useState<Song[]>([]);
+    const {isFetchingSongs, songs} = useContext(FetchedSongs);
 
     let history = useHistory();
 
@@ -32,29 +31,18 @@ function SurveyPage() {
     }
 
     const renderSurvey = () => {
-        if (!isPageLoading) {
+        if (!isFetchingSongs) {
             return <MainPage onSubmit={onSubmit} songs={songs}/>
         }
 
     }
-
-    async function fetchSongs() {
-        setIsPageLoading(true);
-        const songs = await SongsAPI.getSongs();
-        setIsPageLoading(false);
-        setSongs(songs);
-    }
-
-    useEffect(() => {
-        fetchSongs();
-    }, [])
 
     return (
         <SongSubmissionContext.Provider value={{updateSong: setPickedSong, id: pickedSong}}>
             <div>
 
                 {hasSubmitted ? redirectToPage("/survey/thank-you", <ThankYouPage/>) : renderSurvey()}
-                <HashLoader isLoading={isPageLoading}/>
+                <HashLoader isLoading={isFetchingSongs}/>
             </div>
         </SongSubmissionContext.Provider>
     );

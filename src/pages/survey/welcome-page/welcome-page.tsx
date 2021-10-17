@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import "./welcome-page.css";
 import {Button, Divider,} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {useHistory} from "react-router-dom";
+import {SongsAPI} from "../../../survey/API/api";
+import {FetchedSongs} from "../../../survey/survey-layout";
 
 const useDividerStyles = makeStyles((_: Theme) =>
     createStyles({
@@ -34,10 +36,23 @@ export const WelcomePage: React.FC = () => {
     const dividerStyle = useDividerStyles();
     const buttonStyle = useButtonStyles();
     let history = useHistory();
+    const {setSongs, setIsFetchingSongs} = useContext(FetchedSongs);
+
 
     function handleOnClick() {
         history.push("/survey/vote");
     }
+
+    async function fetchSongs() {
+        setIsFetchingSongs(true);
+        const songs = await SongsAPI.getSongs();
+        setIsFetchingSongs(false);
+        setSongs(songs);
+    }
+
+    useEffect(() => {
+        fetchSongs();
+    }, [fetchSongs])
 
     return (
         <div className="App">
