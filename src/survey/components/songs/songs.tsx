@@ -93,63 +93,63 @@ export const SongList: React.FC<SongsProps> = (
 
     return (
         <div>
+            Asaf
+            {/*<List dense className={classes.root}>*/}
+            {/*    {songs.map((song, index) => {*/}
+            {/*        const labelId = `checkbox-list-secondary-label-${index}`;*/}
 
-            <List dense className={classes.root}>
-                {songs.map((song, index) => {
-                    const labelId = `checkbox-list-secondary-label-${index}`;
+            {/*        const isChecked = checked === song.id;*/}
 
-                    const isChecked = checked === song.id;
+            {/*        const backgroundColor = isChecked ? "rgb(123, 132, 91)" : "";*/}
 
-                    const backgroundColor = isChecked ? "rgb(123, 132, 91)" : "";
+            {/*        return (*/}
+            {/*            // <div>ASAF</div>*/}
+            {/*            // <div key={`${index}-dev`}>*/}
+            {/*            //     <div>ASAF</div>*/}
+            {/*                /!*<ListItem className={itemStyle.container} key={labelId} button*!/*/}
+            {/*                /!*          selected={false}*!/*/}
+            {/*                /!*          onClick={() => onSongChange(song)}*!/*/}
+            {/*                /!*          style={{*!/*/}
+            {/*                /!*              backgroundColor: backgroundColor,*!/*/}
+            {/*                /!*              padding: "10px",*!/*/}
+            {/*                /!*              color: "#f7f4f1",*!/*/}
+            {/*                /!*              width: 350,*!/*/}
+            {/*                /!*              height: 80*!/*/}
+            {/*                /!*          }}>*!/*/}
 
-                    return (
-                        <div>ASAF</div>
-                        // <div key={`${index}-dev`}>
-                        //     <div>ASAF</div>
-                            {/*<ListItem className={itemStyle.container} key={labelId} button*/}
-                            {/*          selected={false}*/}
-                            {/*          onClick={() => onSongChange(song)}*/}
-                            {/*          style={{*/}
-                            {/*              backgroundColor: backgroundColor,*/}
-                            {/*              padding: "10px",*/}
-                            {/*              color: "#f7f4f1",*/}
-                            {/*              width: 350,*/}
-                            {/*              height: 80*/}
-                            {/*          }}>*/}
+            {/*                /!*    <Checkbox*!/*/}
+            {/*                /!*        icon={<RadioButtonUncheckedIcon/>}*!/*/}
+            {/*                /!*        edge="end"*!/*/}
+            {/*                /!*        onChange={() => onSongChange(song)}*!/*/}
+            {/*                /!*        checked={isChecked}*!/*/}
+            {/*                /!*        checkedIcon={<RadioButtonCheckedIcon/>}*!/*/}
+            {/*                /!*        {...label}*!/*/}
+            {/*                /!*        sx={{*!/*/}
+            {/*                /!*            color: "#f7f4f1",*!/*/}
+            {/*                /!*            '&.Mui-checked': {*!/*/}
+            {/*                /!*                color: "#f7f4f1",*!/*/}
+            {/*                /!*            },*!/*/}
+            {/*                /!*        }}*!/*/}
+            {/*                /!*    />*!/*/}
 
-                            {/*    <Checkbox*/}
-                            {/*        icon={<RadioButtonUncheckedIcon/>}*/}
-                            {/*        edge="end"*/}
-                            {/*        onChange={() => onSongChange(song)}*/}
-                            {/*        checked={isChecked}*/}
-                            {/*        checkedIcon={<RadioButtonCheckedIcon/>}*/}
-                            {/*        {...label}*/}
-                            {/*        sx={{*/}
-                            {/*            color: "#f7f4f1",*/}
-                            {/*            '&.Mui-checked': {*/}
-                            {/*                color: "#f7f4f1",*/}
-                            {/*            },*/}
-                            {/*        }}*/}
-                            {/*    />*/}
+            {/*                /!*    <ListItemText id={labelId}*!/*/}
+            {/*                /!*                  primary={song.name}*!/*/}
+            {/*                /!*                  disableTypography*!/*/}
+            {/*                /!*                  className={textStyle.primary}/>*!/*/}
 
-                            {/*    <ListItemText id={labelId}*/}
-                            {/*                  primary={song.name}*/}
-                            {/*                  disableTypography*/}
-                            {/*                  className={textStyle.primary}/>*/}
+            {/*                /!*    <SongComponent*!/*/}
+            {/*                /!*        key={labelId}*!/*/}
+            {/*                /!*        song={song}*!/*/}
+            {/*                /!*        isChecked={song.id.toString() === songContext.id.toString()}*!/*/}
+            {/*                /!*        onChange={onSongChange}/>*!/*/}
 
-                            {/*    <SongComponent*/}
-                            {/*        key={labelId}*/}
-                            {/*        song={song}*/}
-                            {/*        isChecked={song.id.toString() === songContext.id.toString()}*/}
-                            {/*        onChange={onSongChange}/>*/}
+            {/*                /!*</ListItem>*!/*/}
+            {/*                /!*<Divider key={index} className={dividerStyle.root}/>*!/*/}
+            {/*            // </div>*/}
 
-                            {/*</ListItem>*/}
-                            {/*<Divider key={index} className={dividerStyle.root}/>*/}
-                        // </div>
-
-                    );
-                })}
-            </List>
+            {/*        );*/}
+            {/*    })}*/}
+            {/*</List>*/}
         </div>
 
 
