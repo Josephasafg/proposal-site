@@ -6,7 +6,7 @@ import HIGH_HOPES from "./images/High_Hopes.jpg";
 import HALLELUJAH from "./images/hallelujah.jpg";
 import BEAUTIFUL_DAYS from "./images/beautiful_days.jpg";
 // @ts-ignore
-import ReactRoundedImage from "react-rounded-image";
+// import ReactRoundedImage from "react-rounded-image";
 
 
 const SONG_IMAGES: { [key: number]: string } = {
@@ -29,6 +29,7 @@ export const SongComponent: React.FC<SongProps> = (
 
     return (
         <div className="img-wrapper">
+            TEST
             {/*<ReactRoundedImage*/}
             {/*    imageWidth="50"*/}
             {/*    roundedSize="0"*/}
