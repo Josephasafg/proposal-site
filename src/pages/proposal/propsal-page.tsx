@@ -64,14 +64,16 @@ const HEBREW_PHRASES = [
 ]
 const TEXT_INTERVAL = 4000;
 
-const sound = new Howl({
-    // src: [BackgroundSong],
-    volume: 1.2
-});
-
-const soundYes = new Howl({
-    // src: [YesSong]
-});
+// const sound = new Howl({
+//     src: [],
+//     // src: [BackgroundSong],
+//     volume: 1.2
+// });
+//
+// const soundYes = new Howl({
+//     src: []
+//     // src: [YesSong]
+// });
 
 export const ProposalPage = () => {
     const [buttonX, setButtonX] = useState(0);
