@@ -81,33 +81,33 @@ export const ProposalPage = () => {
     const [intervalID, setIntervalID] = useState<any>();
     const {width, height} = useWindowSize();
 
-    useEffect(() => {
-        const intervalId = setInterval(() =>
-                setTextIndex(index => index + 1),
-            TEXT_INTERVAL
-        );
+    // useEffect(() => {
+    //     const intervalId = setInterval(() =>
+    //             setTextIndex(index => index + 1),
+    //         TEXT_INTERVAL
+    //     );
+    //
+    //     setIntervalID(intervalId);
+    //
+    //     return () => clearTimeout(intervalId)
+    // }, [])
 
-        setIntervalID(intervalId);
+    // useEffect(() => {
+    //     if (isTextTransitionFinished()) {
+    //         clearInterval(intervalID)
+    //     }
+    //
+    // }, [textIndex, intervalID])
 
-        return () => clearTimeout(intervalId)
-    }, [])
-
-    useEffect(() => {
-        if (isTextTransitionFinished()) {
-            clearInterval(intervalID)
-        }
-
-    }, [textIndex, intervalID])
-
-    useEffect(() => {
-        // Playing song in the background on first render
-        sound.play();
-    }, [])
-
+    // useEffect(() => {
+    //     // Playing song in the background on first render
+    //     sound.play();
+    // }, [])
+    //
     const onYesClick = (event: MouseEvent): void => {
-        sound.stop()
-        soundYes.play();
-        setShowFireWorks(true);
+        // sound.stop()
+        // soundYes.play();
+        // setShowFireWorks(true);
     }
 
     const onNoButtonHover = (event: MouseEvent) => {
