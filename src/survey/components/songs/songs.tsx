@@ -103,8 +103,9 @@ export const SongList: React.FC<SongsProps> = (
                     const backgroundColor = isChecked ? "rgb(123, 132, 91)" : "";
 
                     return (
-                        <div key={`${index}-dev`}>
-                            <div>ASAF</div>
+                        <div>ASAF</div>
+                        // <div key={`${index}-dev`}>
+                        //     <div>ASAF</div>
                             {/*<ListItem className={itemStyle.container} key={labelId} button*/}
                             {/*          selected={false}*/}
                             {/*          onClick={() => onSongChange(song)}*/}
@@ -144,7 +145,7 @@ export const SongList: React.FC<SongsProps> = (
 
                             {/*</ListItem>*/}
                             {/*<Divider key={index} className={dividerStyle.root}/>*/}
-                        </div>
+                        // </div>
 
                     );
                 })}
