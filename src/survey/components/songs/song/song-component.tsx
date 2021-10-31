@@ -1,10 +1,10 @@
 import React from "react";
 import "./song.css";
 import {Song} from "../../../models/song";
-import BEAUTIFUL_DAYS from "../../../../resources/images/beautiful_days.jpg";
-import BELIEVER from "../../../../resources/images/believer.jpg";
-import HIGH_HOPES from "../../../../resources/images/High_Hopes.jpg";
-import HALLELUJAH from "../../../../resources/images/hallelujah.jpg";
+import BELIEVER from "./images/believer.jpg";
+import HIGH_HOPES from "./images/High_Hopes.jpg";
+import HALLELUJAH from "./images/hallelujah.jpg";
+import BEAUTIFUL_DAYS from "./images/beautiful_days.jpg";
 // @ts-ignore
 import ReactRoundedImage from "react-rounded-image";
 
