@@ -29,12 +29,12 @@ export const SongComponent: React.FC<SongProps> = (
 
     return (
         <div className="img-wrapper">
-            <ReactRoundedImage
-                imageWidth="50"
-                roundedSize="0"
-                imageHeight="50"
+            {/*<ReactRoundedImage*/}
+            {/*    imageWidth="50"*/}
+            {/*    roundedSize="0"*/}
+            {/*    imageHeight="50"*/}
 
-                image={SONG_IMAGES[song.id]}/>
+            {/*    image={SONG_IMAGES[song.id]}/>*/}
         </div>
     )
 }
