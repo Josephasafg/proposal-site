@@ -3,9 +3,9 @@ import './proposal.css';
 
 import {Howl} from 'howler';
 // @ts-ignore
-import YesSong from "../../resources/audio/yesSong.mp3";
+// import YesSong from "../../resources/audio/yesSong.mp3";
 // @ts-ignore
-import BackgroundSong from "../../resources/audio/backgroundSong.mp3";
+// import BackgroundSong from "../../resources/audio/backgroundSong_temp.mp3";
 import TextTransition, {presets} from "react-text-transition";
 import {useWindowSize} from 'react-use';
 import Confetti from 'react-confetti'
@@ -65,12 +65,12 @@ const HEBREW_PHRASES = [
 const TEXT_INTERVAL = 4000;
 
 const sound = new Howl({
-    src: [BackgroundSong],
+    // src: [BackgroundSong],
     volume: 1.2
 });
 
 const soundYes = new Howl({
-    src: [YesSong]
+    // src: [YesSong]
 });
 
 export const ProposalPage = () => {

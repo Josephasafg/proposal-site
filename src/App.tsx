@@ -12,9 +12,9 @@ function App() {
 
     return (
         <Switch>
-            <Route exact path="/proposal">
-                <ProposalPage/>
-            </Route>
+            {/*<Route exact path="/proposal">*/}
+            {/*    <ProposalPage/>*/}
+            {/*</Route>*/}
 
             <Route exact path="/survey/vote">
                 <SurveyLayout>
