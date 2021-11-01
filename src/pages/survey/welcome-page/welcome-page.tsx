@@ -47,7 +47,7 @@ export const WelcomePage: React.FC = () => {
         setIsFetchingSongs(true);
         const songs = await SongsAPI.getSongs();
         setIsFetchingSongs(false);
-        localStorage.setItem(LOCAL_STORAGE_SONGS_KEY, JSON.stringify(songs))
+        // localStorage.setItem(LOCAL_STORAGE_SONGS_KEY, JSON.stringify(songs))
         setSongs(songs);
     }
 
