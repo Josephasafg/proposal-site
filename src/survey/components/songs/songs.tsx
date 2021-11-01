@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-// import Checkbox from '@material-ui/core/Checkbox';
 import {Song} from "../../models/song";
 import {SongComponent} from "./song/song-component";
 import {SongSubmissionContext} from "../../../pages/survey/survey-page";
