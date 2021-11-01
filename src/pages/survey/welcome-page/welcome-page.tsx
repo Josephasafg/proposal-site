@@ -103,9 +103,12 @@ export const WelcomePage: React.FC = () => {
 
                 <br/>
                 <br/>
-                <Button className={buttonStyle.root} onTouchStart={handleOnClick}>
-                    להצבעה
-                </Button>
+                <div onClick={handleOnClick}>
+                    <Button className={buttonStyle.root} onClick={handleOnClick}>
+                        להצבעה
+                    </Button>
+                </div>
+
             </div>
         </div>
     )
