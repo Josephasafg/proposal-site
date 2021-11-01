@@ -36,24 +36,24 @@ export const WelcomePage: React.FC = () => {
     const dividerStyle = useDividerStyles();
     const buttonStyle = useButtonStyles();
     let history = useHistory();
-    const {setSongs, setIsFetchingSongs} = useContext(FetchedSongs);
+    // const {setSongs, setIsFetchingSongs} = useContext(FetchedSongs);
 
 
     function handleOnClick() {
         history.push("/survey/vote");
     }
 
-    async function fetchSongs() {
-        setIsFetchingSongs(true);
-        const songs = await SongsAPI.getSongs();
-        setIsFetchingSongs(false);
-        // localStorage.setItem(LOCAL_STORAGE_SONGS_KEY, JSON.stringify(songs))
-        setSongs(songs);
-    }
-
-    useEffect(() => {
-        fetchSongs();
-    }, [])
+    // async function fetchSongs() {
+    //     setIsFetchingSongs(true);
+    //     const songs = await SongsAPI.getSongs();
+    //     setIsFetchingSongs(false);
+    //     localStorage.setItem(LOCAL_STORAGE_SONGS_KEY, JSON.stringify(songs))
+    //     setSongs(songs);
+    // }
+    //
+    // useEffect(() => {
+    //     fetchSongs();
+    // }, [])
 
     return (
         <div className="App">
