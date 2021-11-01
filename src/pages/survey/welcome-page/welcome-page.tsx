@@ -89,13 +89,13 @@ export const WelcomePage: React.FC = () => {
                 <br/>
                 <br/>
 
-                <Button className={buttonStyle.root}>
+                {/*<Button className={buttonStyle.root}>*/}
                     <Link to="/survey/vote">
                         <span style={{fontSize: 18, fontWeight: "bold"}}>
                             להצבעה
                         </span>
                     </Link>
-                </Button>
+                {/*</Button>*/}
 
             </div>
         </div>
