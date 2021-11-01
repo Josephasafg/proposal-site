@@ -93,18 +93,19 @@ export const SongList: React.FC<SongsProps> = (
     return (
         <div>
             <List dense className={classes.root}>
-                {songs.map((song, index) => {
+                {[1,2,3,4].map((song, index) => {
                     const labelId = `checkbox-list-secondary-label-${index}`;
 
-                    const isChecked = checked === song.id;
+                    // const isChecked = checked === song.id;
 
-                    const backgroundColor = isChecked ? "rgb(123, 132, 91)" : "";
+                    const backgroundColor = true ? "rgb(123, 132, 91)" : "";
+                    // const backgroundColor = isChecked ? "rgb(123, 132, 91)" : "";
 
                     return (
                         <div key={`${index}-dev`} className={"song-item"}>
                             <ListItem className={itemStyle.container} key={labelId} button
                                       selected={false}
-                                      onClick={() => onSongChange(song)}
+                                      // onClick={() => onSongChange(song)}
                                       style={{
                                           backgroundColor: backgroundColor,
                                           padding: "10px",
@@ -116,8 +117,8 @@ export const SongList: React.FC<SongsProps> = (
                                 <Checkbox
                                     icon={<RadioButtonUncheckedIcon/>}
                                     edge="end"
-                                    onChange={() => onSongChange(song)}
-                                    checked={isChecked}
+                                    // onChange={() => onSongChange(song)}
+                                    checked={true}
                                     checkedIcon={<RadioButtonCheckedIcon/>}
                                     {...label}
                                     sx={{
@@ -129,15 +130,16 @@ export const SongList: React.FC<SongsProps> = (
                                 />
 
                                 <ListItemText id={labelId}
-                                              primary={song.name}
+                                              primary={"Asaf"}
+                                              // primary={song.name}
                                               disableTypography
                                               className={textStyle.primary}/>
 
-                                <SongComponent
-                                    key={labelId}
-                                    song={song}
-                                    isChecked={song.id.toString() === songContext.id.toString()}
-                                    onChange={onSongChange}/>
+                                {/*<SongComponent*/}
+                                {/*    key={labelId}*/}
+                                {/*    song={song}*/}
+                                {/*    isChecked={song.id.toString() === songContext.id.toString()}*/}
+                                {/*    onChange={onSongChange}/>*/}
 
                             </ListItem>
                             <Divider key={index} className={dividerStyle.root}/>
