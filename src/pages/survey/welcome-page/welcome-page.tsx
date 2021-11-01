@@ -35,25 +35,10 @@ const useButtonStyles = makeStyles((_: Theme) =>
 export const WelcomePage: React.FC = () => {
     const dividerStyle = useDividerStyles();
     const buttonStyle = useButtonStyles();
-    let history = useHistory();
-    // const {setSongs, setIsFetchingSongs} = useContext(FetchedSongs);
-
 
     // function handleOnClick() {
     //     history.push("/survey/vote");
     // }
-
-    // async function fetchSongs() {
-    //     setIsFetchingSongs(true);
-    //     const songs = await SongsAPI.getSongs();
-    //     setIsFetchingSongs(false);
-    //     localStorage.setItem(LOCAL_STORAGE_SONGS_KEY, JSON.stringify(songs))
-    //     setSongs(songs);
-    // }
-    //
-    // useEffect(() => {
-    //     fetchSongs();
-    // }, [])
 
     return (
         <div className="App">
@@ -105,7 +90,7 @@ export const WelcomePage: React.FC = () => {
                 <br/>
 
                 <Button className={buttonStyle.root}>
-                    <Link to={"/survey/vote"}>
+                    <Link to="/survey/vote">
                         <span style={{fontSize: 18, fontWeight: "bold"}}>
                             להצבעה
                         </span>
