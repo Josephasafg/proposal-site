@@ -35,10 +35,11 @@ const useButtonStyles = makeStyles((_: Theme) =>
 export const WelcomePage: React.FC = () => {
     const dividerStyle = useDividerStyles();
     const buttonStyle = useButtonStyles();
+    const history = useHistory();
 
-    // function handleOnClick() {
-    //     history.push("/survey/vote");
-    // }
+    function handleOnClick() {
+        history.replace("/survey/vote");
+    }
 
     return (
         <div className="App">
@@ -89,13 +90,13 @@ export const WelcomePage: React.FC = () => {
                 <br/>
                 <br/>
 
-                {/*<Button className={buttonStyle.root}>*/}
-                    <Link to="/survey/vote">
-                        <span style={{fontSize: 18, fontWeight: "bold"}}>
+                <Button className={buttonStyle.root} onClick={handleOnClick}>
+                    {/*<Link to="/survey/vote">*/}
                             להצבעה
-                        </span>
-                    </Link>
-                {/*</Button>*/}
+                        {/*<span style={{fontSize: 18, fontWeight: "bold"}}>*/}
+                        {/*</span>*/}
+                    {/*</Link>*/}
+                </Button>
 
             </div>
         </div>
