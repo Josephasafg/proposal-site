@@ -16,11 +16,11 @@ function App() {
                 <ProposalPage/>
             </Route>
 
-            <Route exact path={"/survey/vote"}>
-                <SurveyLayout>
-                    <SurveyPage/>
-                </SurveyLayout>
-            </Route>
+            {/*<Route exact path={"/survey/vote"}>*/}
+            {/*    <SurveyLayout>*/}
+            {/*        <SurveyPage/>*/}
+            {/*    </SurveyLayout>*/}
+            {/*</Route>*/}
 
             <Route exact path={"/survey/welcome-page"}>
                 <SurveyLayout>
