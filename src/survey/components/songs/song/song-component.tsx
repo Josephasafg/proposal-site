@@ -19,11 +19,11 @@ export const SongComponent: React.FC<SongProps> = (
 
     return (
         <div className="img-wrapper">
-            {/*<ReactRoundedImage*/}
-            {/*    imageWidth="50"*/}
-            {/*    roundedSize="0"*/}
-            {/*    imageHeight="50"*/}
-            {/*    image={song.embeddedURL}/>*/}
+            <ReactRoundedImage
+                imageWidth="50"
+                roundedSize="0"
+                imageHeight="50"
+                image={song.embeddedURL}/>
         </div>
     )
 }
