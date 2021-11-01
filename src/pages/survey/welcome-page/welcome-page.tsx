@@ -38,6 +38,7 @@ export const WelcomePage: React.FC = () => {
     const history = useHistory();
 
     function handleOnClick() {
+        alert("test")
         history.replace("/survey/vote");
     }
 
