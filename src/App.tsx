@@ -16,7 +16,7 @@ function App() {
                 <ProposalPage/>
             </Route>
 
-            <Route exact path="/survey/vote">
+            <Route path="/survey/vote">
                 <SurveyLayout>
                     <SurveyPage/>
                 </SurveyLayout>

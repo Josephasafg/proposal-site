@@ -106,7 +106,9 @@ export const WelcomePage: React.FC = () => {
 
                 <Button className={buttonStyle.root}>
                     <Link to={"/survey/vote"}>
-                        להצבעה
+                        <span style={{fontSize: 18, fontWeight: "bold"}}>
+                            להצבעה
+                        </span>
                     </Link>
                 </Button>
 
