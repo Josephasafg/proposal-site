@@ -1,11 +1,11 @@
-import React, {useContext, useEffect} from "react";
+import React from "react";
 import "./welcome-page.css";
 import {Button, Divider,} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {useHistory} from "react-router-dom";
-import {SongsAPI} from "../../../survey/API/api";
-import {FetchedSongs} from "../../../survey/survey-layout";
-import {LOCAL_STORAGE_SONGS_KEY} from "../../../survey/components/songs/consts";
+// import {SongsAPI} from "../../../survey/API/api";
+// import {FetchedSongs} from "../../../survey/survey-layout";
+// import {LOCAL_STORAGE_SONGS_KEY} from "../../../survey/components/songs/consts";
 
 const useDividerStyles = makeStyles((_: Theme) =>
     createStyles({
@@ -103,7 +103,7 @@ export const WelcomePage: React.FC = () => {
 
                 <br/>
                 <br/>
-                <Button className={buttonStyle.root} onClick={handleOnClick}>
+                <Button className={buttonStyle.root} onTouchStart={handleOnClick}>
                     להצבעה
                 </Button>
             </div>
