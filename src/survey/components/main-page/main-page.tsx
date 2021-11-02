@@ -27,7 +27,6 @@ export const MainPage: React.FC<MainPageProps> = (
     const {id} = useContext(SongSubmissionContext);
     const [isLoad, setIsLoad] = useState(false);
     const [hasSubmitted, setHasSubmitted] = useState(false);
-    let history = useHistory();
 
     const handleOnSubmit = async () => {
         setIsLoad(true);
@@ -35,13 +34,6 @@ export const MainPage: React.FC<MainPageProps> = (
         setIsLoad(false);
         setHasSubmitted(hasSuccessfulSubmission)
     }
-
-    useEffect(() => {
-        if (hasSubmitted) {
-            history.push("/survey/thank-you");
-        }
-    }, [hasSubmitted])
-
 
     return (
         <div className={"site-background"}>
