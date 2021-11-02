@@ -62,7 +62,7 @@ function SurveyPage() {
             }
 
         }
-    }, [])
+    }, [history])
 
 
     const onSubmit = async () => {
@@ -70,9 +70,9 @@ function SurveyPage() {
         setHasSubmitted(hasSuccessfulSubmission);
     }
 
-    function redirectToPage(url: string, component: JSX.Element) {
-        history.push(url);
-        return component;
+    function redirectToPage(url: string) {
+        // history.push(url);
+        return  (<ThankYouPage/>);
     }
 
     const renderSurvey = () => {
@@ -85,7 +85,7 @@ function SurveyPage() {
         <SongSubmissionContext.Provider value={{updateSong: setPickedSong, id: pickedSong}}>
             <div className={"App"}>
 
-                {hasSubmitted ? redirectToPage("/survey/thank-you", <ThankYouPage/>) : renderSurvey()}
+                {hasSubmitted ? <ThankYouPage/> : renderSurvey()}
                 <HashLoader isLoading={isFetchingSongs}/>
             </div>
         </SongSubmissionContext.Provider>
