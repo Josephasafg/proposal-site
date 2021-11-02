@@ -21,24 +21,24 @@ function App() {
             {/*    </SurveyLayout>*/}
             {/*</Route>*/}
 
-            <Route exact path={"/survey/welcome-page"}>
+            <Route path={"/survey/welcome-page"}>
                 <SurveyLayout>
                     <WelcomePage/>
                 </SurveyLayout>
             </Route>
 
 
-            <Route exact path={"/survey/winning-song"}>
+            <Route path={"/survey/winning-song"}>
                 <SurveyLayout>
                     <WinningSong/>
                 </SurveyLayout>
             </Route>
 
-            {/*<Route exact path={"/survey/thank-you"}>*/}
-            {/*    <SurveyLayout>*/}
-            {/*        <ThankYouPage/>*/}
-            {/*    </SurveyLayout>*/}
-            {/*</Route>*/}
+            <Route path={"/survey/thank-you"}>
+                <SurveyLayout>
+                    <ThankYouPage/>
+                </SurveyLayout>
+            </Route>
 
             <Redirect from="/" to={"/survey/welcome-page"} exact={true}/>
 
