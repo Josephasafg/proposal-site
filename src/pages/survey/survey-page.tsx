@@ -1,11 +1,9 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import './survey.css';
-import {useHistory} from "react-router-dom";
 import {SongsAPI} from "../../survey/API/api";
 import {MainPage} from "../../survey/components/main-page/main-page";
 import {HashLoader} from "../../survey/components/spinner/spinner";
 import {FetchedSongs} from "../../survey/survey-layout";
-import {LOCAL_STORAGE_SONGS_KEY} from "../../survey/components/songs/consts";
 import {Song} from "../../survey/models/song";
 
 import BELIEVER from "../../resources/believer.jpg";
@@ -47,21 +45,7 @@ const LOCAL_SONGS: Song[] = [
 
 function SurveyPage() {
     const [pickedSong, setPickedSong] = useState(-1);
-    const {isFetchingSongs, songs, setSongs} = useContext(FetchedSongs);
-    let history = useHistory();
-
-    // useEffect(() => {
-    //     if (songs.length === 0) {
-    //         const stringSongs = localStorage.getItem(LOCAL_STORAGE_SONGS_KEY);
-    //         if (stringSongs) {
-    //             setSongs(JSON.parse(stringSongs));
-    //         } else {
-    //             history.push("/survey/welcome-page");
-    //         }
-    //
-    //     }
-    // }, [history])
-
+    const {isFetchingSongs} = useContext(FetchedSongs);
 
     const onSubmit = async (): Promise<boolean> => {
         return await SongsAPI.submitChoice(pickedSong);

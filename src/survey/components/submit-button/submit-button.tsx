@@ -18,7 +18,8 @@ const useStyles = makeStyles((_: Theme) =>
             color: "#97845d",
             width: 150,
             fontSize: 18,
-            fontWeight: "bold"
+            fontWeight: "bold",
+            cursor: "pointer"
         },
 
     }),
