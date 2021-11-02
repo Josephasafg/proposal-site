@@ -1,7 +1,6 @@
 import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
 import {ProposalPage} from "./pages/proposal/propsal-page";
-import SurveyPage from "./pages/survey/survey-page";
 import {WelcomePage} from "./pages/survey/welcome-page/welcome-page";
 import {WinningSong} from './survey/components/winning-song/winning-song';
 import {SurveyLayout} from "./survey/survey-layout";

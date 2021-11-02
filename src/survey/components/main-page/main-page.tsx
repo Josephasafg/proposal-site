@@ -45,18 +45,22 @@ export const MainPage: React.FC<MainPageProps> = (
 
     return (
         <div className={"site-background"}>
-            <div className="help-us-header">
-                <div className={"help-us-text"}>{HELP_US_TEXT}</div>
-                <div className={"help-us-description"}>{HELP_US_DESCRITPION}</div>
-                <div className={"help-us-description"}>{HELP_US_DESCRITPION2}</div>
-            </div>
+            {hasSubmitted ? <ThankYouPage/> :
+                <div>
+                    <div className="help-us-header">
+                        <div className={"help-us-text"}>{HELP_US_TEXT}</div>
+                        <div className={"help-us-description"}>{HELP_US_DESCRITPION}</div>
+                        <div className={"help-us-description"}>{HELP_US_DESCRITPION2}</div>
+                    </div>
 
-            <SongList songs={songs}/>
-            <div className={"vote-countdown-wrapper"}>
-                <VoteCountdown/>
-            </div>
-            {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedSongId={id}/>}
-            {hasSubmitted && <ThankYouPage/>}
+                    <SongList songs={songs}/>
+                    <div className={"vote-countdown-wrapper"}>
+                        <VoteCountdown/>
+                    </div>
+                    {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedSongId={id}/>}
+                </div>
+            }
+
         </div>
     )
 }
