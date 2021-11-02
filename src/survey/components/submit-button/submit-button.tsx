@@ -32,7 +32,6 @@ export const SubmitButton: React.FC<SubmitButtonProps> = (
 
     const classes = useStyles();
 
-
     return (
         <Button onClick={onClick} disabled={pickedSongId === -1} className={clsx(classes.root)}>
             {SUBMIT_TEXT}

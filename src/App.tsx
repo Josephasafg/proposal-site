@@ -34,11 +34,11 @@ function App() {
                 </SurveyLayout>
             </Route>
 
-            <Route exact path={"/survey/thank-you"}>
-                <SurveyLayout>
-                    <ThankYouPage/>
-                </SurveyLayout>
-            </Route>
+            {/*<Route exact path={"/survey/thank-you"}>*/}
+            {/*    <SurveyLayout>*/}
+            {/*        <ThankYouPage/>*/}
+            {/*    </SurveyLayout>*/}
+            {/*</Route>*/}
 
             <Redirect from="/" to={"/survey/welcome-page"} exact={true}/>
 

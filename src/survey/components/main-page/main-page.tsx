@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useState} from "react";
 import SongList from "../songs/songs";
 import {CircularSpinner} from "../spinner/spinner";
 import {SubmitButton} from "../submit-button/submit-button";
@@ -7,7 +7,6 @@ import {VoteCountdown} from "../countdown-clock/countdown-clock";
 import {SongSubmissionContext} from "../../../pages/survey/survey-page";
 import "./main-page.css";
 import {ThankYouPage} from "../thank-you-page/thank-you-page";
-import {useHistory} from "react-router-dom";
 
 const HELP_US_TEXT = "שוברים את הכוס!";
 const HELP_US_DESCRITPION = 'בחרו שיר מתוך הרשימה';
@@ -34,10 +33,6 @@ export const MainPage: React.FC<MainPageProps> = (
         setIsLoad(false);
         setHasSubmitted(hasSuccessfulSubmission)
     }
-
-    useEffect(() => {
-
-    }, [hasSubmitted])
 
     return (
         <div className={"site-background"}>
