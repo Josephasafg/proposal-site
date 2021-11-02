@@ -81,7 +81,7 @@ export const SongList: React.FC<SongsProps> = (
     const classes = useStyles();
     const dividerStyle = useDividerStyles();
     const itemStyle = useItemStyles();
-    const [checked, setChecked] = React.useState(1);
+    const [checked, setChecked] = React.useState(-1);
     const songContext = useContext(SongSubmissionContext);
     const textStyle = useTextStyles();
 
@@ -135,9 +135,7 @@ export const SongList: React.FC<SongsProps> = (
 
                                 <SongComponent
                                     key={labelId}
-                                    song={song}
-                                    isChecked={song.id.toString() === songContext.id.toString()}
-                                    onChange={onSongChange}/>
+                                    song={song}/>
 
                             </ListItem>
                             <Divider key={index} className={dividerStyle.root}/>

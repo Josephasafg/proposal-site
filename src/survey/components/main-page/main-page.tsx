@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import SongList from "../songs/songs";
 import {CircularSpinner} from "../spinner/spinner";
 import {SubmitButton} from "../submit-button/submit-button";
@@ -6,12 +6,15 @@ import {Song} from "../../models/song";
 import {VoteCountdown} from "../countdown-clock/countdown-clock";
 import {SongSubmissionContext} from "../../../pages/survey/survey-page";
 import "./main-page.css";
+import {ThankYouPage} from "../thank-you-page/thank-you-page";
+import {useHistory} from "react-router-dom";
+
 const HELP_US_TEXT = "שוברים את הכוס!";
 const HELP_US_DESCRITPION = 'בחרו שיר מתוך הרשימה';
 const HELP_US_DESCRITPION2 = "ולחצו לשלוח לדיג'יי";
 
 interface MainPageProps {
-    onSubmit: () => void
+    onSubmit: () => Promise<boolean>
     songs: Song[]
 }
 
@@ -23,12 +26,22 @@ export const MainPage: React.FC<MainPageProps> = (
 
     const {id} = useContext(SongSubmissionContext);
     const [isLoad, setIsLoad] = useState(false);
+    const [hasSubmitted, setHasSubmitted] = useState(false);
+    let history = useHistory();
 
     const handleOnSubmit = async () => {
         setIsLoad(true);
-        await onSubmit();
+        const hasSuccessfulSubmission = await onSubmit();
         setIsLoad(false);
+        setHasSubmitted(hasSuccessfulSubmission)
     }
+
+    useEffect(() => {
+        if (hasSubmitted) {
+            history.push("/survey/thank-you");
+        }
+    }, [hasSubmitted])
+
 
     return (
         <div className={"site-background"}>
@@ -43,6 +56,7 @@ export const MainPage: React.FC<MainPageProps> = (
                 <VoteCountdown/>
             </div>
             {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedSongId={id}/>}
+            {hasSubmitted && <ThankYouPage/>}
         </div>
     )
 }

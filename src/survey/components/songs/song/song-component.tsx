@@ -8,8 +8,6 @@ import ReactRoundedImage from "react-rounded-image";
 
 interface SongProps {
     song: Song
-    isChecked: boolean
-    onChange: (event: any) => void
 }
 
 export const SongComponent: React.FC<SongProps> = (
