@@ -50,17 +50,17 @@ function SurveyPage() {
     const {isFetchingSongs, songs, setSongs} = useContext(FetchedSongs);
     let history = useHistory();
 
-    useEffect(() => {
-        if (songs.length === 0) {
-            const stringSongs = localStorage.getItem(LOCAL_STORAGE_SONGS_KEY);
-            if (stringSongs) {
-                setSongs(JSON.parse(stringSongs));
-            } else {
-                history.push("/survey/welcome-page");
-            }
-
-        }
-    }, [history])
+    // useEffect(() => {
+    //     if (songs.length === 0) {
+    //         const stringSongs = localStorage.getItem(LOCAL_STORAGE_SONGS_KEY);
+    //         if (stringSongs) {
+    //             setSongs(JSON.parse(stringSongs));
+    //         } else {
+    //             history.push("/survey/welcome-page");
+    //         }
+    //
+    //     }
+    // }, [history])
 
 
     const onSubmit = async (): Promise<boolean> => {

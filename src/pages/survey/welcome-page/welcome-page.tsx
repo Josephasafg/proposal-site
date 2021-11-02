@@ -37,12 +37,6 @@ export const WelcomePage: React.FC = () => {
     const dividerStyle = useDividerStyles();
     const buttonStyle = useButtonStyles();
     const [toVote, setToVote] = useState(false);
-    const history = useHistory();
-
-    // function handleOnClick() {
-    //     alert("test")
-    //     history.replace("/survey/vote");
-    // }
 
     return (
         <div className="App">
@@ -95,11 +89,7 @@ export const WelcomePage: React.FC = () => {
                     <br/>
 
                     <Button className={buttonStyle.root} onClick={() => setToVote(true)}>
-                        {/*<Link to="/survey/vote">*/}
                         להצבעה
-                        {/*<span style={{fontSize: 18, fontWeight: "bold"}}>*/}
-                        {/*</span>*/}
-                        {/*</Link>*/}
                     </Button>
 
                 </div>}
