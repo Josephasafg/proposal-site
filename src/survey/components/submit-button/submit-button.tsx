@@ -34,8 +34,7 @@ export const SubmitButton: React.FC<SubmitButtonProps> = (
     const classes = useStyles();
     // disabled={pickedSongId === -1} className={clsx(classes.root)}
     return (
-        <button onClick={onClick} style={{cursor: "pointer" +
-                ""}}>
+        <button onClick={onClick} style={{cursor: "pointer"}}>
             {SUBMIT_TEXT}
         </button>
     )

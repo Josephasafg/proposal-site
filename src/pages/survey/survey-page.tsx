@@ -45,7 +45,6 @@ const LOCAL_SONGS: Song[] = [
 
 function SurveyPage() {
     const [pickedSong, setPickedSong] = useState(-1);
-    const {isFetchingSongs} = useContext(FetchedSongs);
 
     const onSubmit = async (): Promise<boolean> => {
         return await SongsAPI.submitChoice(pickedSong);
@@ -55,7 +54,6 @@ function SurveyPage() {
         <SongSubmissionContext.Provider value={{updateSong: setPickedSong, id: pickedSong}}>
             <div className={"App"}>
                 <MainPage onSubmit={onSubmit} songs={LOCAL_SONGS}/>
-                <HashLoader isLoading={isFetchingSongs}/>
             </div>
         </SongSubmissionContext.Provider>
     );
