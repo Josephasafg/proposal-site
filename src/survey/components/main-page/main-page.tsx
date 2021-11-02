@@ -35,6 +35,10 @@ export const MainPage: React.FC<MainPageProps> = (
         setHasSubmitted(hasSuccessfulSubmission)
     }
 
+    useEffect(() => {
+
+    }, [hasSubmitted])
+
     return (
         <div className={"site-background"}>
             {hasSubmitted ? <ThankYouPage/> :
