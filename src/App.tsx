@@ -6,6 +6,7 @@ import {WinningSong} from './survey/components/winning-song/winning-song';
 import {SurveyLayout} from "./survey/survey-layout";
 import {ThankYouPage} from "./survey/components/thank-you-page/thank-you-page";
 import SurveyPage from "./pages/survey/survey-page";
+import {THANK_YOU_PAGE_PATH, VOTE_PATH, WELCOME_PAGE_PATH, WINNING_PAGE_PATH} from "./survey/API/url-paths";
 
 
 function App() {
@@ -16,32 +17,32 @@ function App() {
             {/*    <ProposalPage/>*/}
             {/*</Route>*/}
 
-            <Route path={"/survey/vote"}>
+            <Route path={VOTE_PATH}>
                 <SurveyLayout>
                     <SurveyPage/>
                 </SurveyLayout>
             </Route>
 
-            <Route path={"/survey/welcome-page"}>
+            <Route path={WELCOME_PAGE_PATH}>
                 <SurveyLayout>
                     <WelcomePage/>
                 </SurveyLayout>
             </Route>
 
 
-            <Route path={"/survey/winning-song"}>
+            <Route path={WINNING_PAGE_PATH}>
                 <SurveyLayout>
                     <WinningSong/>
                 </SurveyLayout>
             </Route>
 
-            <Route path={"/survey/thank-you"}>
+            <Route path={THANK_YOU_PAGE_PATH}>
                 <SurveyLayout>
                     <ThankYouPage/>
                 </SurveyLayout>
             </Route>
 
-            <Redirect from="/" to={"/survey/welcome-page"} exact={true}/>
+            <Redirect from="/" to={WELCOME_PAGE_PATH} exact={true}/>
 
         </Switch>
     )

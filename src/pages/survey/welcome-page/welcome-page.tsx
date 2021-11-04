@@ -3,6 +3,7 @@ import "./welcome-page.css";
 import {Button, Divider,} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {useHistory} from "react-router-dom";
+import {VOTE_PATH} from "../../../survey/API/url-paths";
 // import {SongsAPI} from "../../../survey/API/api";
 // import {FetchedSongs} from "../../../survey/survey-layout";
 // import {LOCAL_STORAGE_SONGS_KEY} from "../../../survey/components/songs/consts";
@@ -40,7 +41,7 @@ export const WelcomePage: React.FC = () => {
 
     useEffect(() => {
         if (toVote){
-            history.push("/survey/vote");
+            history.push(VOTE_PATH);
         }
     }, [toVote, history])
 
