@@ -39,7 +39,7 @@ export const WelcomePage: React.FC = () => {
     const [toVote, setToVote] = useState(false);
 
     return (
-        <div className="App">
+        <div>
             {toVote ? <SurveyPage/> :
                 <div className={"page-wrapper"}>
                     <div className={"first-header"}>

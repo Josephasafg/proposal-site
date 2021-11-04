@@ -1,9 +1,6 @@
-import React, {createContext, useContext, useState} from 'react';
-import './survey.css';
+import React, {createContext, useState} from 'react';
 import {SongsAPI} from "../../survey/API/api";
 import {MainPage} from "../../survey/components/main-page/main-page";
-import {HashLoader} from "../../survey/components/spinner/spinner";
-import {FetchedSongs} from "../../survey/survey-layout";
 import {Song} from "../../survey/models/song";
 
 import BELIEVER from "../../resources/believer.jpg";

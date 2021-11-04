@@ -18,21 +18,9 @@ export const SurveyLayout: React.FC<SurveyLayoutProps> = (
         children
     }
 ) => {
-    // const [isPageLoading, setIsPageLoading] = useState(false);
-    const [fetchedSongs, setFetchedSongs] = useState<Song[]>([]);
-
     return (
-        // <FetchedSongs.Provider value={{
-        //     songs: fetchedSongs as any,
-        //     setSongs: setFetchedSongs,
-            // isFetchingSongs: isPageLoading,
-            // setIsFetchingSongs: setIsPageLoading
-        // }}>
-
-            <div className="SurveyApp">
-                {children}
-            </div>
-        // </FetchedSongs.Provider>
-
+        <div className="SurveyApp">
+            {children}
+        </div>
     )
 }
