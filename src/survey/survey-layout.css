@@ -55,7 +55,7 @@ and (orientation: landscape) {
 
 }
 
-.SurveyApp {
+.survey-app {
     text-align: center;
     color: #97845d;
     font-family: 'Secular One', sans-serif;    /*font-size: 22px;*/

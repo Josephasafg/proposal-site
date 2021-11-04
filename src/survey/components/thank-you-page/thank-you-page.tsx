@@ -6,7 +6,7 @@ const US_TEXT = "אוהבים, אסף ושרון"
 
 export const ThankYouPage: React.FC = () => {
     return (
-        <div className="App">
+        <div>
             <div className={"text-wrapper"}>
                 <div>
                     {THANK_YOU_TEXT}

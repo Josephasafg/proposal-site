@@ -1,17 +1,9 @@
-import React, {createContext, useState} from "react";
+import React from "react";
 import "./survey-layout.css";
-import {Song} from "./models/song";
 
 interface SurveyLayoutProps {
     children: JSX.Element
 }
-
-
-export const FetchedSongs = createContext({
-    songs: [], setSongs: (_: Song[]) => {
-    }, isFetchingSongs: false, setIsFetchingSongs: (_: boolean) => {
-    }
-});
 
 export const SurveyLayout: React.FC<SurveyLayoutProps> = (
     {
@@ -19,7 +11,7 @@ export const SurveyLayout: React.FC<SurveyLayoutProps> = (
     }
 ) => {
     return (
-        <div className="SurveyApp">
+        <div className="survey-app">
             {children}
         </div>
     )
