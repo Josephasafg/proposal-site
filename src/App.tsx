@@ -1,6 +1,5 @@
 import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
-import {ProposalPage} from "./pages/proposal/propsal-page";
 import {WelcomePage} from "./pages/survey/welcome-page/welcome-page";
 import {WinningSong} from './survey/components/winning-song/winning-song';
 import {SurveyLayout} from "./survey/survey-layout";
@@ -14,15 +13,22 @@ import {
     WINNING_PAGE_PATH
 } from "./survey/API/url-paths";
 import {VoteEnd} from "./survey/components/vote-end/vote-end";
+import {isVotingEnded} from "./survey/ending-vote-time";
 
 
 function App() {
+    const isFinished = isVotingEnded();
 
     return (
         <Switch>
             {/*<Route exact path="/proposal">*/}
             {/*    <ProposalPage/>*/}
             {/*</Route>*/}
+            <Route path={VOTING_HAS_ENDED_PAGE}>
+                <SurveyLayout>
+                    <VoteEnd/>
+                </SurveyLayout>
+            </Route>
 
             <Route path={THANK_YOU_PAGE_PATH}>
                 <SurveyLayout>
@@ -49,14 +55,7 @@ function App() {
                 </SurveyLayout>
             </Route>
 
-            <Route path={VOTING_HAS_ENDED_PAGE}>
-                <SurveyLayout>
-                    <VoteEnd/>
-                </SurveyLayout>
-            </Route>
-
-            <Redirect from="/" to={WELCOME_PAGE_PATH} exact={true}/>
-
+            <Redirect from="/" to={isFinished ? VOTING_HAS_ENDED_PAGE : WELCOME_PAGE_PATH} exact={true}/>
         </Switch>
     )
 }

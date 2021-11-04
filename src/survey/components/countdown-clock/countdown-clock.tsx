@@ -1,8 +1,8 @@
 import React from "react";
 import Countdown, {zeroPad} from "react-countdown";
 import "./countdown-clock.css";
+import {CHOSEN_SONG_DATE} from "../../ending-vote-time";
 
-const CHOSEN_SONG_DATE = new Date(2021, 10, 8, 19, 30);
 
 interface InnerCountdownProps {
     hours: number
@@ -14,7 +14,7 @@ interface InnerCountdownProps {
 }
 
 export const VoteCountdown: React.FC = () => {
-    const Completionist = () => <span>ההצבעה הסתיימה!</span>;
+    const Completionist = () => <div className={"finished-voting"}>ההצבעה הסתיימה!</div>;
 
 // Renderer callback with condition
     const renderer = (countdownProps: InnerCountdownProps) => {
