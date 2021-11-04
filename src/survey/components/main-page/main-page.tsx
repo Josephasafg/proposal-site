@@ -32,16 +32,12 @@ export const MainPage: React.FC<MainPageProps> = (
     const handleOnSubmit = async () => {
         setIsLoad(true);
         const hasSuccessfulSubmission = await onSubmit();
-        if (!hasSuccessfulSubmission) {
-            alert("SOME ERROR")
-        }
         setIsLoad(false);
         setHasSubmitted(hasSuccessfulSubmission)
     }
 
     useEffect(() => {
         if (hasSubmitted) {
-            alert("PUSHING")
             history.push(THANK_YOU_PAGE_PATH);
         }
     }, [hasSubmitted, history])

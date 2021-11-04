@@ -17,6 +17,12 @@ function App() {
             {/*    <ProposalPage/>*/}
             {/*</Route>*/}
 
+            <Route path={THANK_YOU_PAGE_PATH}>
+                <SurveyLayout>
+                    <ThankYouPage/>
+                </SurveyLayout>
+            </Route>
+
             <Route path={VOTE_PATH}>
                 <SurveyLayout>
                     <SurveyPage/>
@@ -33,12 +39,6 @@ function App() {
             <Route path={WINNING_PAGE_PATH}>
                 <SurveyLayout>
                     <WinningSong/>
-                </SurveyLayout>
-            </Route>
-
-            <Route path={THANK_YOU_PAGE_PATH}>
-                <SurveyLayout>
-                    <ThankYouPage/>
                 </SurveyLayout>
             </Route>
 
