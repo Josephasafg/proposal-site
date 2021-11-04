@@ -6,7 +6,14 @@ import {WinningSong} from './survey/components/winning-song/winning-song';
 import {SurveyLayout} from "./survey/survey-layout";
 import {ThankYouPage} from "./survey/components/thank-you-page/thank-you-page";
 import SurveyPage from "./pages/survey/survey-page";
-import {THANK_YOU_PAGE_PATH, VOTE_PATH, WELCOME_PAGE_PATH, WINNING_PAGE_PATH} from "./survey/API/url-paths";
+import {
+    THANK_YOU_PAGE_PATH,
+    VOTE_PATH,
+    VOTING_HAS_ENDED_PAGE,
+    WELCOME_PAGE_PATH,
+    WINNING_PAGE_PATH
+} from "./survey/API/url-paths";
+import {VoteEnd} from "./survey/components/vote-end/vote-end";
 
 
 function App() {
@@ -39,6 +46,12 @@ function App() {
             <Route path={WINNING_PAGE_PATH}>
                 <SurveyLayout>
                     <WinningSong/>
+                </SurveyLayout>
+            </Route>
+
+            <Route path={VOTING_HAS_ENDED_PAGE}>
+                <SurveyLayout>
+                    <VoteEnd/>
                 </SurveyLayout>
             </Route>
 
