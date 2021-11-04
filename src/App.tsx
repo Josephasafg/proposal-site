@@ -5,21 +5,22 @@ import {WelcomePage} from "./pages/survey/welcome-page/welcome-page";
 import {WinningSong} from './survey/components/winning-song/winning-song';
 import {SurveyLayout} from "./survey/survey-layout";
 import {ThankYouPage} from "./survey/components/thank-you-page/thank-you-page";
+import SurveyPage from "./pages/survey/survey-page";
 
 
 function App() {
 
     return (
         <Switch>
-            <Route exact path="/proposal">
-                <ProposalPage/>
-            </Route>
-
-            {/*<Route exact path={"/survey/vote"}>*/}
-            {/*    <SurveyLayout>*/}
-            {/*        <SurveyPage/>*/}
-            {/*    </SurveyLayout>*/}
+            {/*<Route exact path="/proposal">*/}
+            {/*    <ProposalPage/>*/}
             {/*</Route>*/}
+
+            <Route path={"/survey/vote"}>
+                <SurveyLayout>
+                    <SurveyPage/>
+                </SurveyLayout>
+            </Route>
 
             <Route path={"/survey/welcome-page"}>
                 <SurveyLayout>
