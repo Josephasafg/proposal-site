@@ -65,7 +65,7 @@ and (orientation: landscape) {
     -o-background-size: cover;
     background-size: cover;
     /*background-size: 1500px 1500px;*/
-    min-height: 650px;
+    min-height: 700px;
     /*background-size: cover;*/
 }
 
