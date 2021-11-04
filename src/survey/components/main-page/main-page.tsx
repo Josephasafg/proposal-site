@@ -7,6 +7,7 @@ import {VoteCountdown} from "../countdown-clock/countdown-clock";
 import {SongSubmissionContext} from "../../../pages/survey/survey-page";
 import "./main-page.css";
 import {useHistory} from "react-router-dom";
+import {THANK_YOU_PAGE_PATH} from "../../API/url-paths";
 
 const HELP_US_TEXT = "שוברים את הכוס!";
 const HELP_US_DESCRITPION = 'בחרו שיר מתוך הרשימה';
@@ -37,7 +38,7 @@ export const MainPage: React.FC<MainPageProps> = (
 
     useEffect(() => {
         if (hasSubmitted)
-            history.push("/survey/thank-you");
+            history.push(THANK_YOU_PAGE_PATH);
     }, [hasSubmitted])
 
     return (
