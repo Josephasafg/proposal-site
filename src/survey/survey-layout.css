@@ -64,6 +64,8 @@ and (orientation: landscape) {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    /*background-size: 1500px 1500px;*/
+    min-height: 650px;
     /*background-size: cover;*/
 }
 
