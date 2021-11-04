@@ -41,12 +41,12 @@ export const MainPage: React.FC<MainPageProps> = (
     }, [hasSubmitted])
 
     return (
-        <div className={"site-background"}>
+        <div>
             <div>
                 <div className="help-us-header">
                     <div className={"help-us-text"}>{HELP_US_TEXT}</div>
-                    <div className={"help-us-description"}>{HELP_US_DESCRITPION}</div>
-                    <div className={"help-us-description"}>{HELP_US_DESCRITPION2}</div>
+                    <div>{HELP_US_DESCRITPION}</div>
+                    <div>{HELP_US_DESCRITPION2}</div>
                 </div>
 
                 <SongList songs={songs}/>

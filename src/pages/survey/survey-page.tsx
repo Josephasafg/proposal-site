@@ -49,7 +49,7 @@ function SurveyPage() {
 
     return (
         <SongSubmissionContext.Provider value={{updateSong: setPickedSong, id: pickedSong}}>
-            <div className={"App"}>
+            <div>
                 <MainPage onSubmit={onSubmit} songs={LOCAL_SONGS}/>
             </div>
         </SongSubmissionContext.Provider>

@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
+.help-us-header {
+    padding: 20px;
+    font-size: 18px;
+    direction: rtl;
+}
+
 .help-us-text {
     font-weight: bold;
 }
