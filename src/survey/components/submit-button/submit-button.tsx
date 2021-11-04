@@ -2,7 +2,6 @@ import React from "react";
 import {Button} from '@material-ui/core';
 import "./submit-button.css";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import clsx from "clsx";
 
 
 interface SubmitButtonProps {
@@ -32,10 +31,12 @@ export const SubmitButton: React.FC<SubmitButtonProps> = (
     }) => {
 
     const classes = useStyles();
-    // disabled={pickedSongId === -1} className={clsx(classes.root)}
     return (
-        <button onClick={onClick} style={{cursor: "pointer"}}>
+        <Button className={classes.root}
+                onClick={onClick}
+                disabled={pickedSongId === -1}>
             {SUBMIT_TEXT}
-        </button>
+        </Button>
+
     )
 }

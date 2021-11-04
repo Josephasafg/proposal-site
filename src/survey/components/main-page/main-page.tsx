@@ -39,7 +39,7 @@ export const MainPage: React.FC<MainPageProps> = (
     useEffect(() => {
         if (hasSubmitted)
             history.push(THANK_YOU_PAGE_PATH);
-    }, [hasSubmitted])
+    }, [hasSubmitted, history])
 
     return (
         <div>

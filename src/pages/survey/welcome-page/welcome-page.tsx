@@ -99,12 +99,6 @@ export const WelcomePage: React.FC = () => {
                 </Button>
 
             </div>
-
-
-            {/*{toVote ? <SurveyPage/> :*/}
-            {/*    }*/}
-
-
         </div>
     )
 }
