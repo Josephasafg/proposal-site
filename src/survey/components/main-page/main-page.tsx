@@ -55,8 +55,7 @@ export const MainPage: React.FC<MainPageProps> = (
                 <div className={"vote-countdown-wrapper"}>
                     <VoteCountdown/>
                 </div>
-                <SubmitButton onClick={handleOnSubmit} pickedSongId={id}/>
-                {/*{isLoad ? <CircularSpinner/> : }*/}
+                {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedSongId={id}/>}
             </div>
 
         </div>
