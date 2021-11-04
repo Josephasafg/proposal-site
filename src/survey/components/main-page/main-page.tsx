@@ -41,6 +41,7 @@ export const MainPage: React.FC<MainPageProps> = (
 
     useEffect(() => {
         if (hasSubmitted) {
+            alert("PUSHING")
             history.push(THANK_YOU_PAGE_PATH);
         }
     }, [hasSubmitted, history])
