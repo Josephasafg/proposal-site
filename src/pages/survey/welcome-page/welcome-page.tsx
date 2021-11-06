@@ -37,7 +37,7 @@ export const WelcomePage: React.FC = () => {
     const history = useHistory();
 
     useEffect(() => {
-        if (toVote){
+        if (toVote) {
             history.push(VOTE_PATH);
         }
     }, [toVote, history])
@@ -58,11 +58,9 @@ export const WelcomePage: React.FC = () => {
                     <div>
                         בעמוד הבא יופיעו ארבעה שירים.
                         <br/>
-                        בחרו שיר שבירת כוס אחד שתרצו שנחגוג
+                        בחרו שיר שבירת כוס אחד
                         <br/>
-                        איתו, ואולי תזכו בפרס מתנת -
-                        <br/>
-                        סתם לא באמת.
+                        שתרצו שנחגוג איתו
                         <br/>
                     </div>
 
@@ -79,15 +77,15 @@ export const WelcomePage: React.FC = () => {
                     <br/>
                     <br/>
                     <div>
-                        כשתרגישו שלמים עם ההחלטה (בכל
-                        <br/>
-                        זאת שיר שבירת כוס, ההחלטה לא פשוטה)
+                        כשתרגישו שלמים עם ההחלטה
                         <br/>
                         לחצו על כפתור - לשלוח לדיג'יי
                     </div>
                 </div>
 
 
+                <br/>
+                🎉 LET THE PARTY BEGIN
                 <br/>
                 <br/>
 
