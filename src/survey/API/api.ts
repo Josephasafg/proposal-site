@@ -2,7 +2,7 @@ import axios from "axios";
 import {Song} from "../models/song";
 
 // const WEDDING_SURVEY_SERVER = "http://localhost:8080";
-const WEDDING_SURVEY_SERVER = "https://fierce-wildwood-60677.herokuapp.com";
+const WEDDING_SURVEY_SERVER = "https://ancient-meadow-77625.herokuapp.com";
 
 export const SONGS_API = axios.create({
     baseURL: WEDDING_SURVEY_SERVER,
