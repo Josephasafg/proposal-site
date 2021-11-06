@@ -4,7 +4,7 @@ import {MainPage} from "../../survey/components/main-page/main-page";
 import {Song} from "../../survey/models/song";
 
 import BELIEVER from "../../resources/believer.jpg";
-import HIGH_HOPES from "../../resources/High_Hopes.jpg";
+import HOW_MUCH_I_LOVE_YOU from "../../resources/how_much_i_love_you.jpg";
 import HALLELUJAH from "../../resources/hallelujah.jpg";
 import BEAUTIFUL_DAYS from "../../resources/beautiful_days.jpg";
 
@@ -22,9 +22,9 @@ const LOCAL_SONGS: Song[] = [
     },
     {
         id: 2,
-        name: "High Hopes - Panic! At The Disco",
+        name: "כמה אני אוהב אותך - גיא מזיג",
         count: "0",
-        embeddedURL: HIGH_HOPES
+        embeddedURL: HOW_MUCH_I_LOVE_YOU
     },
     {
         id: 4,
