@@ -1,3 +1,11 @@
 .MuiListItem-container {
     padding: 0 10px;
 }
+
+.name-style {
+    font-size: 15px;
+}
+
+.artist-style {
+    font-size: 13px;
+}

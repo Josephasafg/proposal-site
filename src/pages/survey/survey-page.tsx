@@ -16,25 +16,29 @@ export const SongSubmissionContext = createContext({
 const LOCAL_SONGS: Song[] = [
     {
         id: 1,
-        name: "I'm a Believer - Smash Mouth",
+        name: "I'm a Believer",
+        artist: "Smash Mouth",
         count: "0",
         embeddedURL: BELIEVER
     },
     {
         id: 2,
-        name: "כמה אני אוהב אותך - גיא מזיג",
+        name: "כמה אני אוהב אותך",
+        artist: "גיא מזיג",
         count: "0",
         embeddedURL: HOW_MUCH_I_LOVE_YOU
     },
     {
         id: 4,
-        name: "Sing Hallelujah! - Dr. Alban",
+        name: "Sing Hallelujah!",
+        artist: "Dr. Alban",
         count: "0",
         embeddedURL: HALLELUJAH
     },
     {
         id: 3,
-        name: "ימים יפים - מועדון הקצב של אביהו פנחסוב",
+        name: "ימים יפים",
+        artist: "מועדון הקצב של אביהו פנחסוב",
         count: "0",
         embeddedURL: BEAUTIFUL_DAYS
     }

@@ -30,7 +30,7 @@ const useTextStyles = makeStyles((_: Theme) =>
         primary: {
             fontSize: "0.720rem",
             position: "relative",
-            maxWidth: 150,
+            maxWidth: 170,
             color: "#f7f4f1"
         }
 
@@ -90,6 +90,20 @@ export const SongList: React.FC<SongsProps> = (
         setChecked(song.id);
     }
 
+    const renderText = (song: Song) => {
+        return (
+            <div>
+                <div className={"name-style"}>
+                    {song.name}
+                </div>
+                <div className={"artist-style"}>
+
+                    {song.artist}
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div>
             <List dense className={classes.root}>
@@ -129,7 +143,7 @@ export const SongList: React.FC<SongsProps> = (
                                 />
 
                                 <ListItemText id={labelId}
-                                              primary={song.name}
+                                              primary={renderText(song)}
                                               disableTypography
                                               className={textStyle.primary}/>
 
