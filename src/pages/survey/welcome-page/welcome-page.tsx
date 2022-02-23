@@ -49,9 +49,9 @@ export const WelcomePage: React.FC = () => {
                     כאן תוכלו להכניס כל טקסט שתרצו, אבל זו ההמלצה שלנו:
                 </div>
 
-                <div className={"second-header"}>
-                    אתם תבחרו לאיזה שיר נשבור את הכוס!
-                </div>
+                {/*<div className={"second-header"}>*/}
+                {/*    אתם תבחרו לאיזה שיר נשבור את הכוס!*/}
+                {/*</div>*/}
                 <Divider className={dividerStyle.root}/>
 
                 <div className={"paragraph"}>
