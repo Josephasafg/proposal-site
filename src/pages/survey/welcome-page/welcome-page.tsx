@@ -46,7 +46,7 @@ export const WelcomePage: React.FC = () => {
         <div>
             <div className={"page-wrapper"}>
                 <div className={"first-header"}>
-                    אנחנו בחרנו מתי ולאן תגיעו
+                    כאן תוכלו להכניס כל טקסט שתרצו, אבל זו ההמלצה שלנו:
                 </div>
 
                 <div className={"second-header"}>
@@ -75,12 +75,6 @@ export const WelcomePage: React.FC = () => {
                     </div>
 
                     <br/>
-                    <br/>
-                    <div>
-                        כשתרגישו שלמים עם ההחלטה
-                        <br/>
-                        לחצו על כפתור - לשלוח לדיג'יי
-                    </div>
                 </div>
 
 

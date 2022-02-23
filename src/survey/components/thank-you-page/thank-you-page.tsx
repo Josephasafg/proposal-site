@@ -1,9 +1,9 @@
 import React from "react";
 import "./thank-you.css";
 
-const THANK_YOU_TEXT = "תודה על הצבעתכם, עכשיו לכו תהנו!";
+const THANK_YOU_TEXT = "גם כאן תוכלו לבחור איזה טקסט שתרצו";
 const US_TEXT = "אוהבים,"
-const US_TEXT2 = "אסף ושרון"
+const US_TEXT2 = "Xו Y"
 
 export const ThankYouPage: React.FC = () => {
     return (
