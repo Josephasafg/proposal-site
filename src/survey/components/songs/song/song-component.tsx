@@ -4,15 +4,16 @@ import {Song} from "../../../models/song";
 
 // @ts-ignore
 import ReactRoundedImage from "react-rounded-image";
+import {ColorChoice} from "../../../models/color";
 
 
 interface SongProps {
-    song: Song
+    colorChoice: ColorChoice
 }
 
 export const SongComponent: React.FC<SongProps> = (
     {
-        song
+        colorChoice
     }) => {
 
     return (
@@ -20,8 +21,7 @@ export const SongComponent: React.FC<SongProps> = (
             <ReactRoundedImage
                 imageWidth="50"
                 roundedSize="0"
-                imageHeight="50"
-                image={song.embeddedURL}/>
+                imageHeight="50"/>
         </div>
     )
 }

@@ -10,6 +10,7 @@ import {Divider, ListItemText} from "@material-ui/core";
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import Checkbox from '@mui/material/Checkbox';
+import {ColorChoice} from "../../models/color";
 
 
 const useStyles = makeStyles((_: Theme) =>
@@ -31,7 +32,7 @@ const useTextStyles = makeStyles((_: Theme) =>
             fontSize: "0.720rem",
             position: "relative",
             maxWidth: 170,
-            color: "#f7f4f1"
+            color: "black"
         }
 
     }),
@@ -41,14 +42,14 @@ const useTextStyles = makeStyles((_: Theme) =>
 const useItemStyles = makeStyles((_: Theme) =>
     createStyles({
         container: {
-            backgroundColor: "rgb(159, 167, 128)",
+            backgroundColor: "#f5f5f5",
             borderRadius: "15px",
             display: "flex",
             justifyContent: "space-between",
             textAlign: "center",
 
             "&:hover": {
-                backgroundColor: "rgb(159, 167, 128)",
+                backgroundColor: "rgb(150, 150, 150)",
 
             }
         }
@@ -69,14 +70,14 @@ const useDividerStyles = makeStyles((_: Theme) =>
 
 
 interface SongsProps {
-    songs: Song[]
+    colors: ColorChoice[]
 }
 
 const label = {inputProps: {'aria-label': 'Checkbox demo'}};
 
 export const SongList: React.FC<SongsProps> = (
     {
-        songs
+        colors
     }) => {
     const classes = useStyles();
     const dividerStyle = useDividerStyles();
@@ -85,20 +86,16 @@ export const SongList: React.FC<SongsProps> = (
     const songContext = useContext(SongSubmissionContext);
     const textStyle = useTextStyles();
 
-    const onSongChange = (song: Song): void => {
-        songContext.updateSong(song.id);
-        setChecked(song.id);
+    const onSongChange = (colorChoice: ColorChoice): void => {
+        songContext.updateSong(colorChoice.color);
+        setChecked(colorChoice.color);
     }
 
-    const renderText = (song: Song) => {
+    const renderText = (colorChoice: ColorChoice) => {
         return (
             <div>
                 <div className={"name-style"}>
-                    {song.name}
-                </div>
-                <div className={"artist-style"}>
-
-                    {song.artist}
+                    {colorChoice.name}
                 </div>
             </div>
         )
@@ -107,18 +104,18 @@ export const SongList: React.FC<SongsProps> = (
     return (
         <div>
             <List dense className={classes.root}>
-                {songs.map((song, index) => {
+                {colors.map((colorChoice, index) => {
                     const labelId = `checkbox-list-secondary-label-${index}`;
 
-                    const isChecked = checked === song.id;
+                    const isChecked = checked === colorChoice.color;
 
-                    const backgroundColor = isChecked ? "rgb(123, 132, 91)" : "";
+                    const backgroundColor = isChecked ? "rgb(150, 150, 150)" : "";
 
                     return (
                         <div key={`${index}-dev`} className={"song-item"}>
                             <ListItem className={itemStyle.container} key={labelId} button
                                       selected={false}
-                                      onClick={() => onSongChange(song)}
+                                      onClick={() => onSongChange(colorChoice)}
                                       style={{
                                           backgroundColor: backgroundColor,
                                           padding: "10px",
@@ -130,7 +127,7 @@ export const SongList: React.FC<SongsProps> = (
                                 <Checkbox
                                     icon={<RadioButtonUncheckedIcon/>}
                                     edge="end"
-                                    onChange={() => onSongChange(song)}
+                                    onChange={() => onSongChange(colorChoice)}
                                     checked={isChecked}
                                     checkedIcon={<RadioButtonCheckedIcon/>}
                                     {...label}
@@ -143,13 +140,9 @@ export const SongList: React.FC<SongsProps> = (
                                 />
 
                                 <ListItemText id={labelId}
-                                              primary={renderText(song)}
+                                              primary={renderText(colorChoice)}
                                               disableTypography
                                               className={textStyle.primary}/>
-
-                                <SongComponent
-                                    key={labelId}
-                                    song={song}/>
 
                             </ListItem>
                             <Divider key={index} className={dividerStyle.root}/>

@@ -9,16 +9,17 @@ interface SubmitButtonProps {
     pickedSongId: number
 }
 
-const SUBMIT_TEXT = "לשלוח לדיג'יי";
+const SUBMIT_TEXT = "בחרתי ואני מוכן להצביע!";
 const useStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
             backgroundColor: "rgb(232, 231, 211)",
             color: "#97845d",
-            width: 150,
+            width: 220,
             fontSize: 18,
             fontWeight: "bold",
-            cursor: "pointer"
+            cursor: "pointer",
+            direction: "rtl",
         },
 
     }),

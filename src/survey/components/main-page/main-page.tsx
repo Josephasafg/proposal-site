@@ -2,26 +2,24 @@ import React, {useContext, useEffect, useState} from "react";
 import SongList from "../songs/songs";
 import {CircularSpinner} from "../spinner/spinner";
 import {SubmitButton} from "../submit-button/submit-button";
-import {Song} from "../../models/song";
 import {VoteCountdown} from "../countdown-clock/countdown-clock";
 import {SongSubmissionContext} from "../../../pages/survey/survey-page";
 import "./main-page.css";
 import {useHistory} from "react-router-dom";
 import {THANK_YOU_PAGE_PATH} from "../../API/url-paths";
+import {ColorChoice} from "../../models/color";
 
-const HELP_US_TEXT = "שוברים את הכוס!";
-const HELP_US_DESCRITPION = 'בחרו שיר מתוך הרשימה';
-const HELP_US_DESCRITPION2 = "ולחצו לשלוח לדיג'יי";
+const HELP_US_TEXT = "בוחרים צבע מתוך הצבעים הבאים";
 
 interface MainPageProps {
     onSubmit: () => Promise<boolean>
-    songs: Song[]
+    colors: ColorChoice[]
 }
 
 export const MainPage: React.FC<MainPageProps> = (
     {
         onSubmit,
-        songs
+        colors
     }) => {
 
     const {id} = useContext(SongSubmissionContext);
@@ -47,14 +45,9 @@ export const MainPage: React.FC<MainPageProps> = (
             <div>
                 <div className="help-us-header">
                     <div className={"help-us-text"}>{HELP_US_TEXT}</div>
-                    <div>{HELP_US_DESCRITPION}</div>
-                    <div>{HELP_US_DESCRITPION2}</div>
                 </div>
 
-                <SongList songs={songs}/>
-                <div className={"vote-countdown-wrapper"}>
-                    <VoteCountdown/>
-                </div>
+                <SongList colors={colors}/>
                 {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedSongId={id}/>}
             </div>
 
