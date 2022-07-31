@@ -1,6 +1,7 @@
 .text-wrapper {
     direction: rtl;
     position: absolute;
-    top: 25%;
+    top: 30%;
+    padding-left: 35px;
     font-size: 36px;
 }
