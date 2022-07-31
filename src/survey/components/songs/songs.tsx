@@ -4,7 +4,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import {Song} from "../../models/song";
 import {SongComponent} from "./song/song-component";
-import {SongSubmissionContext} from "../../../pages/survey/survey-page";
+import {ColorSubmissionContext} from "../../../pages/survey/survey-page";
 import "./songs.css";
 import {Divider, ListItemText} from "@material-ui/core";
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
@@ -83,11 +83,11 @@ export const SongList: React.FC<SongsProps> = (
     const dividerStyle = useDividerStyles();
     const itemStyle = useItemStyles();
     const [checked, setChecked] = React.useState(-1);
-    const songContext = useContext(SongSubmissionContext);
+    const songContext = useContext(ColorSubmissionContext);
     const textStyle = useTextStyles();
 
     const onSongChange = (colorChoice: ColorChoice): void => {
-        songContext.updateSong(colorChoice.color);
+        songContext.updateColor(colorChoice.color);
         setChecked(colorChoice.color);
     }
 
@@ -147,7 +147,6 @@ export const SongList: React.FC<SongsProps> = (
                             </ListItem>
                             <Divider key={index} className={dividerStyle.root}/>
                         </div>
-
                     );
                 })}
             </List>

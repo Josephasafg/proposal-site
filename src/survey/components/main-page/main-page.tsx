@@ -3,7 +3,7 @@ import SongList from "../songs/songs";
 import {CircularSpinner} from "../spinner/spinner";
 import {SubmitButton} from "../submit-button/submit-button";
 import {VoteCountdown} from "../countdown-clock/countdown-clock";
-import {SongSubmissionContext} from "../../../pages/survey/survey-page";
+import {ColorSubmissionContext} from "../../../pages/survey/survey-page";
 import "./main-page.css";
 import {useHistory} from "react-router-dom";
 import {THANK_YOU_PAGE_PATH} from "../../API/url-paths";
@@ -22,7 +22,7 @@ export const MainPage: React.FC<MainPageProps> = (
         colors
     }) => {
 
-    const {id} = useContext(SongSubmissionContext);
+    const {id} = useContext(ColorSubmissionContext);
     const [isLoad, setIsLoad] = useState(false);
     const [hasSubmitted, setHasSubmitted] = useState(false);
     const history = useHistory();
@@ -48,7 +48,7 @@ export const MainPage: React.FC<MainPageProps> = (
                 </div>
 
                 <SongList colors={colors}/>
-                {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedSongId={id}/>}
+                {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedColor={id}/>}
             </div>
 
         </div>

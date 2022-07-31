@@ -3,8 +3,8 @@ import {SongsAPI} from "../../survey/API/api";
 import {MainPage} from "../../survey/components/main-page/main-page";
 import {Color, ColorChoice} from "../../survey/models/color";
 
-export const SongSubmissionContext = createContext({
-    id: -1, updateSong: (_: number) => {
+export const ColorSubmissionContext = createContext({
+    id: Color.Orange, updateColor: (_: Color) => {
     }
 });
 
@@ -28,18 +28,18 @@ const COLORS: ColorChoice[] = [
 ]
 
 function SurveyPage() {
-    const [pickedSong, setPickedSong] = useState(-1);
+    const [pickedColor, setPickedColor] = useState(Color.Orange);
 
     const onSubmit = async (): Promise<boolean> => {
-        return await SongsAPI.submitChoice(pickedSong);
+        return await SongsAPI.submitChoice(pickedColor);
     }
 
     return (
-        <SongSubmissionContext.Provider value={{updateSong: setPickedSong, id: pickedSong}}>
+        <ColorSubmissionContext.Provider value={{updateColor: setPickedColor, id: pickedColor}}>
             <div>
                 <MainPage onSubmit={onSubmit} colors={COLORS}/>
             </div>
-        </SongSubmissionContext.Provider>
+        </ColorSubmissionContext.Provider>
     );
 }
 
