@@ -320,7 +320,7 @@ and (orientation: landscape) {
     text-align: center;
     color: #97845d;
     font-family: 'Secular One', sans-serif;
-    background: url(bg_site.svg) no-repeat center center fixed;
+    background: url(cramel_bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

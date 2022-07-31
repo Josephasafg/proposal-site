@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "./welcome-page.css";
-import {Button, Divider,} from "@material-ui/core";
+import {Button, Divider, TextField,} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {useHistory} from "react-router-dom";
 import {VOTE_PATH} from "../../../survey/API/url-paths";
@@ -19,7 +19,7 @@ const useDividerStyles = makeStyles((_: Theme) =>
 const useButtonStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
-            backgroundColor: "rgb(232, 231, 211)",
+            backgroundColor: "rgb(255, 255, 255)",
             color: "#97845d",
             width: 120,
             fontSize: 18,
@@ -30,9 +30,21 @@ const useButtonStyles = makeStyles((_: Theme) =>
 );
 
 
+const useTextboxStyles = makeStyles((_: Theme) =>
+    createStyles({
+        root: {
+            backgroundColor: "rgb(255, 255, 255)",
+            margin: "10px 10px",
+        },
+
+    }),
+);
+
+
 export const WelcomePage: React.FC = () => {
     const dividerStyle = useDividerStyles();
     const buttonStyle = useButtonStyles();
+    const textboxStyle = useTextboxStyles();
     const [toVote, setToVote] = useState(false);
     const history = useHistory();
 
@@ -46,42 +58,31 @@ export const WelcomePage: React.FC = () => {
         <div>
             <div className={"page-wrapper"}>
                 <div className={"first-header"}>
-                    כאן תוכלו להכניס כל טקסט שתרצו, אבל זו ההמלצה שלנו:
+                    הצביעו והשפיעו!
                 </div>
 
-                <div className={"second-header"}>
-                    הצילו! אנחנו לא יודעים מה לבחור!
-                </div>
                 <Divider className={dividerStyle.root}/>
 
                 <div className={"paragraph"}>
                     <div>
-                        בעמוד הבא יופיעו ארבעה שירים.
+                        קראתם כבר את כל הספרים?
                         <br/>
-                        בחרו שיר שבירת כוס אחד
+                        לא יכולים לחכות לספר הבא שעתיד לצאת בחנוכה?
                         <br/>
-                        שתרצו שנחגוג איתו
+                        זאת ההזדמנות שלכם להשפיע על מה יהיה צבע הכריכה של הספר!
                         <br/>
                     </div>
 
                     <br/>
                     <br/>
                     <div>
-                        השיר שיזכה במירב הקולות יהיה
+                        מה שמך?
                         <br/>
-                        <span className={"glass-breaking-text"}>
-                    שיר שבירת הכוס שלנו.
-                </span>
+                        <TextField className={textboxStyle.root} id="filled-basic" variant="filled" />
                     </div>
 
                     <br/>
                 </div>
-
-
-                <br/>
-                🎉 LET THE PARTY BEGIN
-                <br/>
-                <br/>
 
                 <Button className={buttonStyle.root} onClick={() => setToVote(true)}>
                     להצבעה
