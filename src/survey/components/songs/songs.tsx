@@ -112,14 +112,14 @@ export const SongList: React.FC<SongsProps> = (
                     const backgroundColor = isChecked ? "rgb(150, 150, 150)" : "";
 
                     return (
-                        <div key={`${index}-dev`} className={"song-item"}>
+                        <div key={`${index}-dev`} style={{"color": "red"}}>
                             <ListItem className={itemStyle.container} key={labelId} button
                                       selected={false}
                                       onClick={() => onSongChange(colorChoice)}
                                       style={{
-                                          backgroundColor: backgroundColor,
+                                          backgroundColor: `${colorChoice.hex}`,
                                           padding: "10px",
-                                          color: "#f7f4f1",
+                                          // color: "white",
                                           width: 350,
                                           height: 80
                                       }}>
@@ -132,9 +132,9 @@ export const SongList: React.FC<SongsProps> = (
                                     checkedIcon={<RadioButtonCheckedIcon/>}
                                     {...label}
                                     sx={{
-                                        color: "#f7f4f1",
+                                        color: `${colorChoice.hex}`,
                                         '&.Mui-checked': {
-                                            color: "#f7f4f1",
+                                            color: `${colorChoice.hex}`,
                                         },
                                     }}
                                 />

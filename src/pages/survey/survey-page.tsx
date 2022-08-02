@@ -11,20 +11,25 @@ export const ColorSubmissionContext = createContext({
 const COLORS: ColorChoice[] = [
     {
         color: Color.Orange,
-        name: "כתום"
+        name: "כתום",
+        hex: "#FF8C00",
     },
     {
         color: Color.Gray,
-        name: "אפור"
-    },
-    {
-        color: Color.Black,
-        name: "שחור"
+        name: "אפור",
+        hex: "#808080",
     },
     {
         color: Color.Pink,
-        name: "ורוד"
-    }
+        name: "ורוד",
+        hex: "#ff5588",
+    },
+    {
+        color: Color.Black,
+        name: "שחור",
+        hex: "#191919",
+    },
+
 ]
 
 function SurveyPage() {

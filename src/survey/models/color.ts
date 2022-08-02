@@ -8,4 +8,5 @@ export enum Color {
 export interface ColorChoice {
     color: Color
     name: string
+    hex: string
 }

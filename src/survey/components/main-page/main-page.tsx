@@ -2,12 +2,11 @@ import React, {useContext, useEffect, useState} from "react";
 import SongList from "../songs/songs";
 import {CircularSpinner} from "../spinner/spinner";
 import {SubmitButton} from "../submit-button/submit-button";
-import {VoteCountdown} from "../countdown-clock/countdown-clock";
 import {ColorSubmissionContext} from "../../../pages/survey/survey-page";
 import "./main-page.css";
 import {THANK_YOU_PAGE_PATH} from "../../API/url-paths";
 import {ColorChoice} from "../../models/color";
-import { useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const HELP_US_TEXT = "בוחרים צבע מתוך הצבעים הבאים";
 
@@ -42,15 +41,12 @@ export const MainPage: React.FC<MainPageProps> = (
 
     return (
         <div>
-            <div>
-                <div className="help-us-header">
-                    <div className={"help-us-text"}>{HELP_US_TEXT}</div>
-                </div>
-
-                <SongList colors={colors}/>
-                {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedColor={id}/>}
+            <div className="help-us-header">
+                <div className={"help-us-text"}>{HELP_US_TEXT}</div>
             </div>
 
+            <SongList colors={colors}/>
+            {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedColor={id}/>}
         </div>
     )
 }
