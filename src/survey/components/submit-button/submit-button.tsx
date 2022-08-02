@@ -14,11 +14,13 @@ const SUBMIT_TEXT = "בחרתי ואני מוכן להצביע!";
 const useStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
-            backgroundColor: "rgb(232, 231, 211)",
-            color: "#97845d",
-            width: 220,
+
+            backgroundColor: "#FF8C00",
+            color: "white",
             fontSize: 18,
             fontWeight: "bold",
+            marginTop: "20px",
+            width: 220,
             cursor: "pointer",
             direction: "rtl",
         },
