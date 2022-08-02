@@ -2,14 +2,9 @@ import React, {useContext} from 'react';
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import {Song} from "../../models/song";
-import {SongComponent} from "./song/song-component";
 import {ColorSubmissionContext} from "../../../pages/survey/survey-page";
 import "./songs.css";
 import {Divider, ListItemText} from "@material-ui/core";
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
-import Checkbox from '@mui/material/Checkbox';
 import {ColorChoice} from "../../models/color";
 
 
@@ -41,12 +36,13 @@ const useTextStyles = makeStyles((_: Theme) =>
 
 const useItemStyles = makeStyles((_: Theme) =>
     createStyles({
+        root: {
+            justifyContent: "center",
+            textAlign: "center"
+        },
         container: {
             backgroundColor: "#f5f5f5",
             borderRadius: "15px",
-            display: "flex",
-            justifyContent: "space-between",
-            textAlign: "center",
 
             "&:hover": {
                 backgroundColor: "rgb(150, 150, 150)",
@@ -93,7 +89,7 @@ export const SongList: React.FC<SongsProps> = (
 
     const renderText = (colorChoice: ColorChoice) => {
         return (
-            <div>
+            <div className={"name-wrapper"}>
                 <div className={"name-style"}>
                     {colorChoice.name}
                 </div>
@@ -113,31 +109,15 @@ export const SongList: React.FC<SongsProps> = (
 
                     return (
                         <div key={`${index}-dev`} style={{"color": "red"}}>
-                            <ListItem className={itemStyle.container} key={labelId} button
+                            <ListItem className={`${itemStyle.root} ${itemStyle.container} `} key={labelId} button
                                       selected={false}
                                       onClick={() => onSongChange(colorChoice)}
                                       style={{
                                           backgroundColor: `${colorChoice.hex}`,
-                                          padding: "10px",
                                           // color: "white",
                                           width: 350,
-                                          height: 80
+                                          height: 60
                                       }}>
-
-                                <Checkbox
-                                    icon={<RadioButtonUncheckedIcon/>}
-                                    edge="end"
-                                    onChange={() => onSongChange(colorChoice)}
-                                    checked={isChecked}
-                                    checkedIcon={<RadioButtonCheckedIcon/>}
-                                    {...label}
-                                    sx={{
-                                        color: `${colorChoice.hex}`,
-                                        '&.Mui-checked': {
-                                            color: `${colorChoice.hex}`,
-                                        },
-                                    }}
-                                />
 
                                 <ListItemText id={labelId}
                                               primary={renderText(colorChoice)}

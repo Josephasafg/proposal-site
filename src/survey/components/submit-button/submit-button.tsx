@@ -15,8 +15,8 @@ const useStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
 
-            backgroundColor: "#FF8C00",
-            color: "white",
+            backgroundColor: "white",
+            color: "#FF8C00",
             fontSize: 18,
             fontWeight: "bold",
             marginTop: "20px",
