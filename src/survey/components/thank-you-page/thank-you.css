@@ -1,7 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+
 .text-wrapper {
     direction: rtl;
     position: absolute;
-    top: 30%;
-    padding-left: 35px;
-    font-size: 36px;
+    top: 5%;
+    font-size: 56px;
+}
+
+.thank-you-container {
+    text-align: center;
+    color: #FF8C00;
+    font-family: "Arimo", sans-serif;
+    background: url(thank-you-page.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 700px;
 }

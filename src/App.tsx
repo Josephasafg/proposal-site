@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect, Route, Switch} from "react-router-dom";
+
 import {WelcomePage} from "./pages/survey/welcome-page/welcome-page";
 import {WinningSong} from './survey/components/winning-song/winning-song';
 import {SurveyLayout} from "./survey/survey-layout";
@@ -14,49 +14,25 @@ import {
 } from "./survey/API/url-paths";
 import {VoteEnd} from "./survey/components/vote-end/vote-end";
 import {isVotingEnded} from "./survey/ending-vote-time";
-
+import { Route, Routes } from "react-router";
+import {Navigate} from "react-router-dom";
 
 function App() {
     const isFinished = isVotingEnded();
 
     return (
-        <Switch>
-            {/*<Route exact path="/proposal">*/}
-            {/*    <ProposalPage/>*/}
-            {/*</Route>*/}
-            <Route path={VOTING_HAS_ENDED_PAGE}>
-                <SurveyLayout>
-                    <VoteEnd/>
-                </SurveyLayout>
-            </Route>
+        <Routes>
+            <Route path={VOTING_HAS_ENDED_PAGE} element={<SurveyLayout><VoteEnd/></SurveyLayout>}/>
 
-            <Route path={THANK_YOU_PAGE_PATH}>
-                <SurveyLayout>
-                    <ThankYouPage/>
-                </SurveyLayout>
-            </Route>
+            <Route path={THANK_YOU_PAGE_PATH} element={<SurveyLayout><ThankYouPage/></SurveyLayout>}/>
 
-            <Route path={VOTE_PATH}>
-                <SurveyLayout>
-                    <SurveyPage/>
-                </SurveyLayout>
-            </Route>
+            <Route path={VOTE_PATH} element={    <SurveyLayout><SurveyPage/></SurveyLayout>}/>
 
-            <Route path={WELCOME_PAGE_PATH}>
-                <SurveyLayout>
-                    <WelcomePage/>
-                </SurveyLayout>
-            </Route>
+            <Route path={WELCOME_PAGE_PATH} element={<SurveyLayout><WelcomePage/></SurveyLayout>}/>
+            <Route path={WINNING_PAGE_PATH} element={<SurveyLayout><WinningSong/></SurveyLayout>}/>
 
-
-            <Route path={WINNING_PAGE_PATH}>
-                <SurveyLayout>
-                    <WinningSong/>
-                </SurveyLayout>
-            </Route>
-
-            <Redirect from="/" to={isFinished ? VOTING_HAS_ENDED_PAGE : WELCOME_PAGE_PATH} exact={true}/>
-        </Switch>
+            <Route path="/" element={<Navigate to={WELCOME_PAGE_PATH} />} />
+        </Routes>
     )
 }
 

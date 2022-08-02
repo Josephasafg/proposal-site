@@ -5,9 +5,9 @@ import {SubmitButton} from "../submit-button/submit-button";
 import {VoteCountdown} from "../countdown-clock/countdown-clock";
 import {ColorSubmissionContext} from "../../../pages/survey/survey-page";
 import "./main-page.css";
-import {useHistory} from "react-router-dom";
 import {THANK_YOU_PAGE_PATH} from "../../API/url-paths";
 import {ColorChoice} from "../../models/color";
+import { useNavigate} from "react-router-dom";
 
 const HELP_US_TEXT = "בוחרים צבע מתוך הצבעים הבאים";
 
@@ -25,7 +25,7 @@ export const MainPage: React.FC<MainPageProps> = (
     const {id} = useContext(ColorSubmissionContext);
     const [isLoad, setIsLoad] = useState(false);
     const [hasSubmitted, setHasSubmitted] = useState(false);
-    const history = useHistory();
+    const history = useNavigate();
 
     const handleOnSubmit = async () => {
         setIsLoad(true);
@@ -36,7 +36,7 @@ export const MainPage: React.FC<MainPageProps> = (
 
     useEffect(() => {
         if (hasSubmitted) {
-            history.push(THANK_YOU_PAGE_PATH);
+            history(THANK_YOU_PAGE_PATH);
         }
     }, [hasSubmitted, history])
 

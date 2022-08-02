@@ -2,8 +2,9 @@ import React, {useEffect, useState} from "react";
 import "./welcome-page.css";
 import {Button, Divider, TextField,} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import {useHistory} from "react-router-dom";
+// import {useHistory} from "react-router-dom";
 import {VOTE_PATH} from "../../../survey/API/url-paths";
+import {useNavigate} from "react-router-dom";
 
 const useDividerStyles = makeStyles((_: Theme) =>
     createStyles({
@@ -19,11 +20,12 @@ const useDividerStyles = makeStyles((_: Theme) =>
 const useButtonStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
-            backgroundColor: "rgb(255, 255, 255)",
-            color: "#97845d",
+            backgroundColor: "#FF8C00",
+            color: "white",
             width: 120,
             fontSize: 18,
-            fontWeight: "bold"
+            fontWeight: "bold",
+            marginTop: "20px"
         },
 
     }),
@@ -35,6 +37,9 @@ const useTextboxStyles = makeStyles((_: Theme) =>
         root: {
             backgroundColor: "rgb(255, 255, 255)",
             margin: "10px 10px",
+            '& .MuiFilledInput-root': {
+                height: "40px"
+            }
         },
 
     }),
@@ -46,11 +51,11 @@ export const WelcomePage: React.FC = () => {
     const buttonStyle = useButtonStyles();
     const textboxStyle = useTextboxStyles();
     const [toVote, setToVote] = useState(false);
-    const history = useHistory();
+    const history = useNavigate();
 
     useEffect(() => {
         if (toVote) {
-            history.push(VOTE_PATH);
+            history(VOTE_PATH);
         }
     }, [toVote, history])
 
@@ -78,7 +83,7 @@ export const WelcomePage: React.FC = () => {
                     <div>
                         מה שמך?
                         <br/>
-                        <TextField className={textboxStyle.root} id="filled-basic" variant="filled" />
+                        <TextField className={textboxStyle.root} id="filled-basic" variant="filled"/>
                     </div>
 
                     <br/>

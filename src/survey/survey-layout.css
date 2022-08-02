@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 
 @media only screen
 and (min-device-width: 414px)
@@ -318,8 +318,10 @@ and (orientation: landscape) {
 
 .survey-app {
     text-align: center;
-    color: #97845d;
-    font-family: 'Secular One', sans-serif;
+    color: #FF8C00;
+    /*font-family: "M PLUS 1p", sans-serif;*/
+    font-family: 'Arimo', sans-serif;
+
     background: url(cramel_bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -362,5 +364,5 @@ img.bg {
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: #c3a46c;
+    color: #FF8C00;
 }
