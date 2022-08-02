@@ -105,16 +105,16 @@ export const SongList: React.FC<SongsProps> = (
 
                     const isChecked = checked === colorChoice.color;
 
-                    const backgroundColor = isChecked ? "rgb(150, 150, 150)" : "";
+                    const opacity = isChecked ? "0.7" : "1";
 
                     return (
-                        <div key={`${index}-dev`} style={{"color": "red"}}>
+                        <div key={`${index}-dev`} >
                             <ListItem className={`${itemStyle.root} ${itemStyle.container} `} key={labelId} button
                                       selected={false}
                                       onClick={() => onSongChange(colorChoice)}
                                       style={{
                                           backgroundColor: `${colorChoice.hex}`,
-                                          // color: "white",
+                                          opacity: opacity,
                                           width: 350,
                                           height: 60
                                       }}>
