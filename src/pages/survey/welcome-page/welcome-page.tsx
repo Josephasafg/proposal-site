@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import "./welcome-page.css";
 import {Button, Divider, TextField,} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-// import {useHistory} from "react-router-dom";
 import {VOTE_PATH} from "../../../survey/API/url-paths";
 import {useNavigate} from "react-router-dom";
 
