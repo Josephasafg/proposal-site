@@ -2,9 +2,8 @@
 
 .text-wrapper {
     direction: rtl;
-    position: absolute;
-    top: 5%;
-    font-size: 56px;
+    padding: 140px;
+    font-size: 140px;
 }
 
 .thank-you-container {

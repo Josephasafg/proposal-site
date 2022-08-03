@@ -32,7 +32,7 @@ interface HashLoaderProps {
 export const HashLoader: React.FC<HashLoaderProps> = (
     {
         isLoading,
-        size = 100
+        size = 400
     }) => {
     return (
         <div className={"hash-spinner-wrapper"}>

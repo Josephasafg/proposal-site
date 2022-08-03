@@ -19,14 +19,14 @@ import {Navigate} from "react-router-dom";
 function App() {
     return (
         <Routes>
-            <Route path={VOTING_HAS_ENDED_PAGE} element={<SurveyLayout><VoteEnd/></SurveyLayout>}/>
+            <Route path={VOTING_HAS_ENDED_PAGE} element={<SurveyLayout className={"survey-app"}><VoteEnd/></SurveyLayout>}/>
 
-            <Route path={THANK_YOU_PAGE_PATH} element={<SurveyLayout><ThankYouPage/></SurveyLayout>}/>
+            <Route path={THANK_YOU_PAGE_PATH} element={<SurveyLayout className={"thank-you-container"}><ThankYouPage/></SurveyLayout>}/>
 
-            <Route path={VOTE_PATH} element={    <SurveyLayout><SurveyPage/></SurveyLayout>}/>
+            <Route path={VOTE_PATH} element={    <SurveyLayout className={"survey-app"} ><SurveyPage/></SurveyLayout>}/>
 
-            <Route path={WELCOME_PAGE_PATH} element={<SurveyLayout><WelcomePage/></SurveyLayout>}/>
-            <Route path={WINNING_PAGE_PATH} element={<SurveyLayout><WinningSong/></SurveyLayout>}/>
+            <Route path={WELCOME_PAGE_PATH} element={<SurveyLayout className={"survey-app"}><WelcomePage/></SurveyLayout>}/>
+            <Route path={WINNING_PAGE_PATH} element={<SurveyLayout className={"survey-app"}><WinningSong/></SurveyLayout>}/>
 
             <Route path="/" element={<Navigate to={WELCOME_PAGE_PATH} />} />
         </Routes>

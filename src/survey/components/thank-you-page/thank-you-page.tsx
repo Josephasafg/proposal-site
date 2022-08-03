@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import "./thank-you.css";
-import { useNavigate } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {WELCOME_PAGE_PATH} from "../../API/url-paths";
 
 
@@ -15,11 +15,9 @@ export const ThankYouPage: React.FC = () => {
     })
 
     return (
-        <div className={"thank-you-container"}>
-            <div className={"text-wrapper"}>
-                <div>
-                    {THANK_YOU_TEXT}
-                </div>
+        <div className={"text-wrapper"}>
+            <div>
+                {THANK_YOU_TEXT}
             </div>
         </div>
     )
