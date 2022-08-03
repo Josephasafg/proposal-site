@@ -6,7 +6,8 @@
 }
 
 .first-header {
-    font-size: 40px;
+    margin-top: 140px;
+    font-size: 140px;
     color: #FF8C00;
     padding: 12px;
     font-weight: bold;
@@ -21,6 +22,11 @@
 }
 
 .paragraph {
-    font-size: 20px;
+    margin-top: 140px;
+    font-size: 60px;
+}
+
+.vote-text {
+    margin-bottom: 20px;
 }
 

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "./welcome-page.css";
-import {Button, Divider, TextField,} from "@material-ui/core";
+import {Button, Divider,} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {VOTE_PATH} from "../../../survey/API/url-paths";
 import {useNavigate} from "react-router-dom";
@@ -21,34 +21,41 @@ const useButtonStyles = makeStyles((_: Theme) =>
         root: {
             backgroundColor: "#FF8C00",
             color: "white",
-            width: 120,
-            fontSize: 18,
+            width: 250,
+            height: 70,
+            fontSize: 40,
             fontWeight: "bold",
-            marginTop: "20px"
-        },
+            marginTop: "90px",
 
-    }),
-);
-
-
-const useTextboxStyles = makeStyles((_: Theme) =>
-    createStyles({
-        root: {
-            backgroundColor: "rgb(255, 255, 255)",
-            margin: "10px 10px",
-            '& .MuiFilledInput-root': {
-                height: "40px"
+            '&:hover': {
+                // opacity: 1
             }
         },
 
+
+
     }),
 );
+
+
+// const useTextboxStyles = makeStyles((_: Theme) =>
+//     createStyles({
+//         root: {
+//             backgroundColor: "rgb(255, 255, 255)",
+//             margin: "10px 10px",
+//             '& .MuiOutlinedInput-root': {
+//                 width: "400px",
+//             }
+//         },
+//
+//     }),
+// );
 
 
 export const WelcomePage: React.FC = () => {
     const dividerStyle = useDividerStyles();
     const buttonStyle = useButtonStyles();
-    const textboxStyle = useTextboxStyles();
+    // const textboxStyle = useTextboxStyles();
     const [toVote, setToVote] = useState(false);
     const history = useNavigate();
 
@@ -73,17 +80,18 @@ export const WelcomePage: React.FC = () => {
                         <br/>
                         לא יכולים לחכות לספר הבא שעתיד לצאת בחנוכה?
                         <br/>
-                        זאת ההזדמנות שלכם להשפיע על מה יהיה צבע הכריכה של הספר!
+                        <br/>
+                        זאת ההזדמנות שלכם להשפיע על צבע הכריכה של הספר!
                         <br/>
                     </div>
 
                     <br/>
                     <br/>
-                    <div>
-                        מה שמך?
-                        <br/>
-                        <TextField className={textboxStyle.root} id="filled-basic" variant="filled"/>
-                    </div>
+                    {/*<div className={"vote-text"}>*/}
+                    {/*    מה שמך?*/}
+                    {/*    <br/>*/}
+                    {/*</div>*/}
+                        {/*<TextField className={textboxStyle.root} variant="outlined" />*/}
 
                     <br/>
                 </div>
