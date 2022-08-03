@@ -1,320 +1,138 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3) {
 
-}
+/*@media only screen and (max-width: 600px) {*/
+/*    body {*/
+/*        background-color: red;*/
+/*    }*/
+/*}*/
 
-/* Portrait */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: portrait) {
 
-}
+/*@media only screen*/
+/*and (min-device-width: 414px)*/
+/*and (max-device-width: 736px)*/
+/*and (-webkit-min-device-pixel-ratio: 3) {*/
 
-/* Landscape */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: landscape) {
+/*}*/
 
-}
+/*!* Portrait *!*/
+/*@media only screen*/
+/*and (min-device-width: 414px)*/
+/*and (max-device-width: 736px)*/
+/*and (-webkit-min-device-pixel-ratio: 3)*/
+/*and (orientation: portrait) {*/
 
-/* iPhone XS Max, XR ----------- */
-@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-    /* Styles */
-}
+/*}*/
 
-@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-    /* Styles */
-}
+/*!* Landscape *!*/
+/*@media only screen*/
+/*and (min-device-width: 414px)*/
+/*and (max-device-width: 736px)*/
+/*and (-webkit-min-device-pixel-ratio: 3)*/
+/*and (orientation: landscape) {*/
 
+/*}*/
 
+/*!* iPhone XS Max, XR ----------- *!*/
+/*@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){*/
+/*    !* Styles *!*/
+/*}*/
 
-/* ----------- iPhone X ----------- */
+/*@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){*/
+/*    !* Styles *!*/
+/*}*/
 
-/* Portrait and Landscape */
-@media only screen
-and (min-device-width: 375px)
-and (max-device-width: 812px)
-and (-webkit-min-device-pixel-ratio: 3) {
 
-}
-
-/* Portrait */
-@media only screen
-and (min-device-width: 375px)
-and (max-device-width: 812px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: portrait) {
 
-}
+/*!* ----------- iPhone X ----------- *!*/
 
-/* Landscape */
-@media only screen
-and (min-device-width: 375px)
-and (max-device-width: 812px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: landscape) {
+/*!* Portrait and Landscape *!*/
+/*@media only screen*/
+/*and (min-device-width: 375px)*/
+/*and (max-device-width: 812px)*/
+/*and (-webkit-min-device-pixel-ratio: 3) {*/
 
-}
+/*}*/
 
-/* ----------- Galaxy S3 ----------- */
+/*!* Portrait *!*/
+/*@media only screen*/
+/*and (min-device-width: 375px)*/
+/*and (max-device-width: 812px)*/
+/*and (-webkit-min-device-pixel-ratio: 3)*/
+/*and (orientation: portrait) {*/
 
-/* Portrait and Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 2) {
+/*}*/
 
-}
-
-/* Portrait */
-@media screen
-and (device-width: 320px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 2)
-and (orientation: portrait) {
+/*!* Landscape *!*/
+/*@media only screen*/
+/*and (min-device-width: 375px)*/
+/*and (max-device-width: 812px)*/
+/*and (-webkit-min-device-pixel-ratio: 3)*/
+/*and (orientation: landscape) {*/
 
-}
+/*}*/
 
-/* Landscape */
-@media screen
-and (device-width: 320px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 2)
-and (orientation: landscape) {
 
-}
+/*!* ----------- Google Pixel ----------- *!*/
 
-/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+/*!* Portrait and Landscape *!*/
+/*@media screen*/
+/*and (device-width: 360px)*/
+/*and (device-height: 640px)*/
+/*and (-webkit-device-pixel-ratio: 3) {*/
 
-/* Portrait and Landscape */
-@media screen
-and (device-width: 320px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 3) {
+/*}*/
 
-}
-
-/* Portrait */
-@media screen
-and (device-width: 320px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 3)
-and (orientation: portrait) {
+/*!* Portrait *!*/
+/*@media screen*/
+/*and (device-width: 360px)*/
+/*and (device-height: 640px)*/
+/*and (-webkit-device-pixel-ratio: 3)*/
+/*and (orientation: portrait) {*/
 
-}
-
-/* Landscape */
-@media screen
-and (device-width: 320px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 3)
-and (orientation: landscape) {
-
-}
-
-/* ----------- Galaxy S6 ----------- */
-
-/* Portrait and Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 4) {
-
-}
-
-/* Portrait */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 4)
-and (orientation: portrait) {
+/*}*/
 
-}
-
-/* Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 4)
-and (orientation: landscape) {
-
-}
-
-/* ----------- Google Pixel ----------- */
-
-/* Portrait and Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 3) {
-
-}
-
-/* Portrait */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 3)
-and (orientation: portrait) {
+/*!* Landscape *!*/
+/*@media screen*/
+/*and (device-width: 360px)*/
+/*and (device-height: 640px)*/
+/*and (-webkit-device-pixel-ratio: 3)*/
+/*and (orientation: landscape) {*/
 
-}
-
-/* Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 3)
-and (orientation: landscape) {
-
-}
-
-/* ----------- Google Pixel XL ----------- */
-
-/* Portrait and Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 4) {
-
-}
-
-/* Portrait */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 4)
-and (orientation: portrait) {
+/*}*/
 
-}
-
-/* Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 4)
-and (orientation: landscape) {
-
-}
-
-/* ----------- Nexus 4 ----------- */
-
-/* Portrait and Landscape */
-@media screen
-and (device-width: 384px)
-and (device-height: 592px)
-and (-webkit-device-pixel-ratio: 2) {
-
-}
-
-/* Portrait */
-@media screen
-and (device-width: 384px)
-and (device-height: 592px)
-and (-webkit-device-pixel-ratio: 2)
-and (orientation: portrait) {
-
-}
-
-/* Landscape */
-@media screen
-and (device-width: 384px)
-and (device-height: 592px)
-and (-webkit-device-pixel-ratio: 2)
-and (orientation: landscape) {
-
-}
-
-/* ----------- Nexus 5 ----------- */
-
-/* Portrait and Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 592px)
-and (-webkit-device-pixel-ratio: 3) {
-
-}
-
-/* Portrait */
-@media screen
-and (device-width: 360px)
-and (device-height: 592px)
-and (-webkit-device-pixel-ratio: 3)
-and (orientation: portrait) {
-
-}
-
-/* Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 592px)
-and (-webkit-device-pixel-ratio: 3)
-and (orientation: landscape) {
-
-}
-
-/* ----------- Nexus 6 and 6P ----------- */
-
-/* Portrait and Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 592px)
-and (-webkit-device-pixel-ratio: 4) {
-
-}
-
-/* Portrait */
-@media screen
-and (device-width: 360px)
-and (device-height: 592px)
-and (-webkit-device-pixel-ratio: 4)
-and (orientation: portrait) {
-
-}
-
-/* Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 592px)
-and (-webkit-device-pixel-ratio: 4)
-and (orientation: landscape) {
-
-}
-
-/* ----------- HTC One ----------- */
-
-/* Portrait and Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 3) {
-
-}
-
-/* Portrait */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 3)
-and (orientation: portrait) {
-
-}
-
-/* Landscape */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 3)
-and (orientation: landscape) {
-
-}
+/*!* ----------- Google Pixel XL ----------- *!*/
+
+/*!* Portrait and Landscape *!*/
+/*@media screen*/
+/*and (device-width: 360px)*/
+/*and (device-height: 640px)*/
+/*and (-webkit-device-pixel-ratio: 4) {*/
+
+/*}*/
+
+/*!* Portrait *!*/
+/*@media screen*/
+/*and (device-width: 360px)*/
+/*and (device-height: 640px)*/
+/*and (-webkit-device-pixel-ratio: 4)*/
+/*and (orientation: portrait) {*/
+
+/*}*/
+
+/*!* Landscape *!*/
+/*@media screen*/
+/*and (device-width: 360px)*/
+/*and (device-height: 640px)*/
+/*and (-webkit-device-pixel-ratio: 4)*/
+/*and (orientation: landscape) {*/
+
+/*}*/
+
+
+
+
+
 
 .survey-app {
     text-align: center;
@@ -327,8 +145,8 @@ and (orientation: landscape) {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    /*background-size: 1500px 1500px;*/
-    min-height: 700px;
+    height: 1920px;
+    max-height: 1920px;
     /*background-size: cover;*/
 }
 
@@ -347,12 +165,12 @@ img.bg {
     left: 0;
 }
 
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
-    img.bg {
-        left: 50%;
-        margin-left: -512px;   /* 50% */
-    }
-}
+/*@media screen and (max-width: 1024px) { !* Specific to this particular image *!*/
+/*    img.bg {*/
+/*        left: 50%;*/
+/*        margin-left: -512px;   !* 50% *!*/
+/*    }*/
+/*}*/
 
 
 

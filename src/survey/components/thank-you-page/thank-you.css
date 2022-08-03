@@ -16,5 +16,6 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 700px;
+    height: 1920px;
+    max-height: 1920px;
 }
