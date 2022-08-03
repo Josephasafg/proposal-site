@@ -103,7 +103,7 @@ export const SongList: React.FC<SongsProps> = (
 
                     const isChecked = checked === colorChoice.color;
 
-                    const opacity = isChecked ? "0.7" : "1";
+                    const border = isChecked ? "solid 4px white" : "none";
 
                     return (
                         <div key={`${index}-dev`} >
@@ -112,7 +112,7 @@ export const SongList: React.FC<SongsProps> = (
                                       onClick={() => onSongChange(colorChoice)}
                                       style={{
                                           backgroundColor: `${colorChoice.hex}`,
-                                          opacity: opacity,
+                                          border: border,
                                           width: 750,
                                           height: 120,
                                           margin: "20px"
