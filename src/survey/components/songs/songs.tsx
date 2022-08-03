@@ -69,8 +69,6 @@ interface SongsProps {
     colors: ColorChoice[]
 }
 
-const label = {inputProps: {'aria-label': 'Checkbox demo'}};
-
 export const SongList: React.FC<SongsProps> = (
     {
         colors

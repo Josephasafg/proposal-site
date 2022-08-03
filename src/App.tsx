@@ -13,12 +13,12 @@ import {
     WINNING_PAGE_PATH
 } from "./survey/API/url-paths";
 import {VoteEnd} from "./survey/components/vote-end/vote-end";
-import {isVotingEnded} from "./survey/ending-vote-time";
+// import {isVotingEnded} from "./survey/ending-vote-time";
 import { Route, Routes } from "react-router";
 import {Navigate} from "react-router-dom";
 
 function App() {
-    const isFinished = isVotingEnded();
+    // const isFinished = isVotingEnded();
 
     return (
         <Routes>

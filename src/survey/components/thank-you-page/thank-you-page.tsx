@@ -8,11 +8,11 @@ const THANK_YOU_TEXT = "תודה רבה על הצבעתך!";
 
 export const ThankYouPage: React.FC = () => {
     const navigate = useNavigate();
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         navigate(WELCOME_PAGE_PATH);
-    //     }, 500000)
-    // })
+    useEffect(() => {
+        setTimeout(() => {
+            navigate(WELCOME_PAGE_PATH);
+        }, 500000)
+    })
 
     return (
         <div className={"thank-you-container"}>
