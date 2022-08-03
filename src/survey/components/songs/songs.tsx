@@ -11,7 +11,6 @@ import {ColorChoice} from "../../models/color";
 const useStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
-            maxWidth: 550,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -38,7 +37,8 @@ const useItemStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
             justifyContent: "center",
-            textAlign: "center"
+            textAlign: "center",
+
         },
         container: {
             backgroundColor: "#f5f5f5",
@@ -113,8 +113,9 @@ export const SongList: React.FC<SongsProps> = (
                                       style={{
                                           backgroundColor: `${colorChoice.hex}`,
                                           opacity: opacity,
-                                          width: 350,
-                                          height: 60
+                                          width: 750,
+                                          height: 120,
+                                          margin: "20px"
                                       }}>
 
                                 <ListItemText id={labelId}

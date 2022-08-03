@@ -10,17 +10,18 @@ interface SubmitButtonProps {
     pickedColor: Color
 }
 
-const SUBMIT_TEXT = "בחרתי ואני מוכן להצביע!";
+const SUBMIT_TEXT = "לשליחה!";
 const useStyles = makeStyles((_: Theme) =>
     createStyles({
         root: {
 
             backgroundColor: "white",
             color: "#FF8C00",
-            fontSize: 18,
+            fontSize: 40,
             fontWeight: "bold",
-            marginTop: "20px",
-            width: 220,
+            marginTop: "300px",
+            width: 250,
+            height: 70,
             cursor: "pointer",
             direction: "rtl",
         },

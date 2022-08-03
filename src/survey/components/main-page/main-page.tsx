@@ -8,7 +8,7 @@ import {THANK_YOU_PAGE_PATH} from "../../API/url-paths";
 import {ColorChoice} from "../../models/color";
 import {useNavigate} from "react-router-dom";
 
-const HELP_US_TEXT = "בוחרים צבע מתוך הצבעים הבאים";
+const HELP_US_TEXT = "נא לבחור צבע אחד מהרשימה";
 
 interface MainPageProps {
     onSubmit: () => Promise<boolean>
