@@ -11,7 +11,7 @@ export const ThankYouPage: React.FC = () => {
     useEffect(() => {
         setTimeout(() => {
             navigate(WELCOME_PAGE_PATH);
-        }, 500000)
+        }, 5000)
     })
 
     return (
