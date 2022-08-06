@@ -39,6 +39,7 @@ export const SubmitButton: React.FC<SubmitButtonProps> = (
     }) => {
 
     const classes = useStyles();
+    console.log("PICKED - ", pickedColor)
     return (
         <Button className={classes.root}
                 onClick={onClick}
