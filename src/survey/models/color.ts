@@ -1,8 +1,8 @@
 export enum Color {
-    Gray,
-    Orange,
-    Black,
-    Pink
+    Orange = 1,
+    Gray = 2,
+    Pink = 3,
+    Black = 4,
 }
 
 export interface ColorChoice {
