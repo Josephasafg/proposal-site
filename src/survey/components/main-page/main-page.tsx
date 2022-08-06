@@ -1,6 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
 import SongList from "../songs/songs";
-import {CircularSpinner} from "../spinner/spinner";
 import {SubmitButton} from "../submit-button/submit-button";
 import {ColorSubmissionContext} from "../../../pages/survey/survey-page";
 import "./main-page.css";
@@ -46,7 +45,10 @@ export const MainPage: React.FC<MainPageProps> = (
             </div>
 
             <SongList colors={colors}/>
-            {isLoad ? <CircularSpinner/> : <SubmitButton onClick={handleOnSubmit} pickedColor={id}/>}
+            <div>
+
+            </div>
+            <SubmitButton onClick={handleOnSubmit} pickedColor={id} isLoad={isLoad}/>
         </div>
     )
 }

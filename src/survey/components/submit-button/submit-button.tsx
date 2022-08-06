@@ -3,11 +3,13 @@ import {Button} from '@material-ui/core';
 import "./submit-button.css";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {Color} from "../../models/color";
+import {CircularSpinner} from "../spinner/spinner";
 
 
 interface SubmitButtonProps {
     onClick: () => void
     pickedColor: Color
+    isLoad?: boolean
 }
 
 const SUBMIT_TEXT = "לשליחה!";
@@ -35,7 +37,8 @@ const useStyles = makeStyles((_: Theme) =>
 export const SubmitButton: React.FC<SubmitButtonProps> = (
     {
         onClick,
-        pickedColor
+        pickedColor,
+        isLoad = false
     }) => {
 
     const classes = useStyles();
@@ -44,7 +47,7 @@ export const SubmitButton: React.FC<SubmitButtonProps> = (
         <Button className={classes.root}
                 onClick={onClick}
                 disabled={pickedColor === -1}>
-            {SUBMIT_TEXT}
+            {isLoad ? <CircularSpinner/> : SUBMIT_TEXT}
         </Button>
 
     )
