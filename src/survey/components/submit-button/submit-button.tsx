@@ -24,8 +24,11 @@ const useStyles = makeStyles((_: Theme) =>
             height: 70,
             cursor: "pointer",
             direction: "rtl",
-        },
 
+            '&:hover': {
+                backgroundColor: "#f2f2f2"
+            }
+        },
     }),
 );
 

@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
 import "./welcome-page.css";
-import {Button, Divider,} from "@material-ui/core";
+import {Divider, Button} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {VOTE_PATH} from "../../../survey/API/url-paths";
+
 import {useNavigate} from "react-router-dom";
 
 const useDividerStyles = makeStyles((_: Theme) =>
@@ -28,7 +29,7 @@ const useButtonStyles = makeStyles((_: Theme) =>
             marginTop: "90px",
 
             '&:hover': {
-                // opacity: 1
+                backgroundColor: "#cf7100"
             }
         },
 
